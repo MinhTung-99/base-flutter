@@ -1,5 +1,5 @@
 
-import 'package:abccccc1233/presemtations/base/ui/view/view_interface.dart';
+import 'package:base/presemtations/base/ui/view/view_interface.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';

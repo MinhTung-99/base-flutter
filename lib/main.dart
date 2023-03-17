@@ -1,6 +1,6 @@
 
-import 'package:abccccc1233/presemtations/base/ui/app_page.dart';
-import 'package:abccccc1233/presemtations/view/login/login_view.dart';
+import 'package:base/presemtations/base/ui/app_page.dart';
+import 'package:base/presemtations/view/login/login_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lifecycle/lifecycle.dart';

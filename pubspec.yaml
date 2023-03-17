@@ -1,4 +1,4 @@
-name: abccccc1233
+name: base
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.5
   logger: ^1.1.0
   lifecycle: ^0.6.0
+  dio: ^5.0.2
 
 dev_dependencies:
   flutter_test:

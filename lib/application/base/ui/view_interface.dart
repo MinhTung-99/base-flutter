@@ -35,38 +35,14 @@ mixin ViewInterface {
     return null;
   }
 
-  /// clearFocus
-  void clearFocus(BuildContext context) {
-    if (FocusScope.of(context).hasFocus) {
-      FocusScope.of(context).unfocus();
-    } else {
-      FocusScope.of(context).requestFocus(FocusNode());
-    }
-  }
-
-  /// getTextFieldDecor
-  InputDecoration getTextFieldDecor(
-      {String? hint, String? label, String? helperText, Widget? suffixIcon}) {
-    return InputDecoration(
-      labelText: label,
-      hintText: hint,
-      helperText: helperText,
-      suffixIcon: suffixIcon,
-      hintStyle: const TextStyle(color: Color(0xFFE5E5E5), fontSize: 14),
-      border: const UnderlineInputBorder(
-        borderSide: BorderSide(color: const Color(0xFFE5E5E5)),
-      ),
-      enabledBorder: const UnderlineInputBorder(
-        borderSide: BorderSide(color: Color(0xFFE5E5E5)),
-      ),
-    );
-  }
+  Color? backgroundColor;
 
   /// buildPage
   Widget buildPage(BuildContext context) {
     return //KeyboardAutoDismiss(scaffold:
       Scaffold(
       // resizeToAvoidBottomInset: false,
+      backgroundColor: backgroundColor,
       appBar: buildAppBar(context),
       body: buildBody(context),
       bottomNavigationBar: buildBottomNavigationBar(context),

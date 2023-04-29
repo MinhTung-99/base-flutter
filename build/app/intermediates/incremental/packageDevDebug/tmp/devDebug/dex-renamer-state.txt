@@ -1,0 +1,4 @@
+#Sat Apr 29 16:21:14 ICT 2023
+base.0=/Users/tung/Documents/Tung's Git/base-flutter/build/app/intermediates/dex/devDebug/mergeDexDevDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

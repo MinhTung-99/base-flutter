@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:base_flutter/view/entry/entry_view.dart';
+import 'package:base_flutter/view/entry/entry_screen.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
@@ -59,7 +59,7 @@ class _MyApp extends State<MyApp> {
                     builder: FlutterSmartDialog.init(),
                     navigatorObservers: [defaultLifecycleObserver],
                     getPages: AppPages.routes,
-                    initialRoute: EntryView.router));
+                    initialRoute: EntryScreen.router));
           });
         } else {
           return Container(

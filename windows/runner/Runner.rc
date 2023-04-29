@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.develop" "\0"
-            VALUE "FileDescription", "abccccc1233" "\0"
+            VALUE "FileDescription", "base_flutter" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "abccccc1233" "\0"
+            VALUE "InternalName", "base_flutter" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.develop. All rights reserved." "\0"
-            VALUE "OriginalFilename", "abccccc1233.exe" "\0"
-            VALUE "ProductName", "abccccc1233" "\0"
+            VALUE "OriginalFilename", "base_flutter.exe" "\0"
+            VALUE "ProductName", "base_flutter" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

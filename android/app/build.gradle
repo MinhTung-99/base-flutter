@@ -44,7 +44,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.develop.abccccc1233"
+        applicationId "com.develop.base_flutter"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion flutter.minSdkVersion
@@ -59,6 +59,28 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
+    }
+
+    flavorDimensions "app"
+    productFlavors {
+        dev {
+            dimension "app"
+            //applicationId "com.develop.dev"
+            resValue "string", "app_name", "[DEV] FLUTTER"
+            applicationIdSuffix ".dev"
+        }
+        stg {
+            dimension "app"
+            //applicationId "com.develop.stg"
+            resValue "string", "app_name", "[STG] FLUTTER"
+            applicationIdSuffix ".stg"
+        }
+//        prod {
+//            dimension "app"
+//            applicationId "com.ajc_systems.local_helper"
+//            applicationIdSuffix ".poke_eme_citizens"
+//            resValue "string", "app_name", "ポケコム"
+//        }
     }
 }
 

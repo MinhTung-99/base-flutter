@@ -1,11 +1,11 @@
 {
-    "name": "abccccc1233",
-    "short_name": "abccccc1233",
+    "name": "base_flutter",
+    "short_name": "base_flutter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "base",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

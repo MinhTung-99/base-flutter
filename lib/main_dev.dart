@@ -1,10 +1,11 @@
 
-import 'package:flutter/cupertino.dart';
+import 'package:base_flutter/enviroment.dart';
+import 'package:base_flutter/main.dart';
 
-import 'environment.dart';
-import 'main.dart';
+import 'injection.dart';
 
 void main() {
-  AppEnviroment.setupEnv(Enviroment.dev);
-  runApp(const MyApp());
+  final Enviroment env = Enviroment(flavor: Flavor.DEV);
+  baseUrl = env.baseUrl;
+  mainCommon();
 }

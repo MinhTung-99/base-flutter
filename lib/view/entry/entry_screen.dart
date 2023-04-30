@@ -1,5 +1,5 @@
 
-import 'package:base_flutter/resource/dialog_common.dart';
+import 'package:base_flutter/application/widgets/date_picker_widget.dart';
 import 'package:base_flutter/view/entry/entry_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -34,7 +34,9 @@ class EntryViewState extends BaseStateFulView<EntryScreen, EntryViewModel> {
             viewModel.showAlertDialog(context);
           },
           child: Text('showDialog'),
-        )
+        ),
+
+        const DatePickerWidget()
       ],
     );
   }

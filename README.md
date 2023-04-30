@@ -18,3 +18,6 @@ samples, guidance on mobile development, and a full API reference.
 # build android and ios
 - flutter run -t lib/main_dev.dart --flavor dev
 
+# add injectable
+- flutter packages pub run build_runner build
+- flutter packages pub run build_runner build --delete-conflicting-outputs (run when Conflicting)

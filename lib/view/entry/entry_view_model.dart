@@ -4,14 +4,18 @@ import 'package:base_flutter/data/network/api_service.dart';
 import 'package:base_flutter/data/network/response/entry/entry_response.dart';
 import 'package:base_flutter/injection.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:injectable/injectable.dart';
+
+import '../../resource/dialog_common.dart';
 
 @injectable
 class EntryViewModel extends BaseViewModel {
   final ApiService _apiService;
+  final DialogCommon _dialogCommon;
 
-  EntryViewModel(this._apiService);
+  EntryViewModel(this._apiService, this._dialogCommon);
 
   Rx<EntryResponse?> entryRx = Rx(null);
 
@@ -20,6 +24,10 @@ class EntryViewModel extends BaseViewModel {
     super.onInit();
     //await _sharedPreference.saveToken(value: 'TOKEN HERE=12333');
     getEntry();
+  }
+
+  void showAlertDialog(BuildContext context) {
+    _dialogCommon.showAlertDialog(context: context, title: 'ABCCC');
   }
 
   void getEntry() async{

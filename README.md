@@ -21,3 +21,6 @@ samples, guidance on mobile development, and a full API reference.
 # add injectable
 - flutter packages pub run build_runner build
 - flutter packages pub run build_runner build --delete-conflicting-outputs (run when Conflicting)
+
+# realm
+- flutter pub run realm generate

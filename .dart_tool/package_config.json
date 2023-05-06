@@ -38,6 +38,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "build_cli_annotations",
+      "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/build_cli_annotations-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "build_config",
       "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/build_config-1.1.1",
       "packageUri": "lib/",
@@ -78,6 +84,12 @@
       "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/built_value-8.4.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "cancellation_token",
+      "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/cancellation_token-1.6.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "characters",
@@ -248,6 +260,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "http",
+      "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/http-0.13.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "http_multi_server",
       "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/http_multi_server-3.2.1",
       "packageUri": "lib/",
@@ -350,6 +368,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "objectid",
+      "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/objectid-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "package_config",
       "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/package_config-2.1.0",
       "packageUri": "lib/",
@@ -422,6 +446,24 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "realm",
+      "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/realm-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "realm_common",
+      "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/realm_common-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "realm_generator",
+      "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/realm_generator-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "recase",
       "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/recase-4.1.0",
       "packageUri": "lib/",
@@ -438,6 +480,12 @@
       "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/retrofit_generator-5.0.0+1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "sane_uuid",
+      "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/sane_uuid-1.0.0-alpha.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "shared_preferences",
@@ -542,6 +590,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "tar",
+      "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/tar-0.5.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "term_glyph",
       "rootUri": "file:///Users/tung/.pub-cache/hosted/pub.dev/term_glyph-1.2.1",
       "packageUri": "lib/",
@@ -620,7 +674,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-04-30T08:29:51.543310Z",
+  "generated": "2023-05-06T05:21:39.854713Z",
   "generator": "pub",
   "generatorVersion": "2.19.3"
 }

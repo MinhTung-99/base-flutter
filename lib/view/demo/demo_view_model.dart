@@ -2,7 +2,6 @@ import 'package:base_flutter/application/base/view_model/base_view_model.dart';
 import 'package:base_flutter/data/local/shared_preferences/shared_preferences.dart';
 import 'package:base_flutter/data/network/api_service.dart';
 import 'package:base_flutter/data/network/response/entry/entry_response.dart';
-import 'package:base_flutter/injection.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -10,7 +9,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../data/local/realm/realm_database.dart';
 import '../../data/local/realm/realm_table.dart';
-import '../../resource/dialog_common.dart';
+import '../../resource/dialog/dialog_common.dart';
 
 @injectable
 class DemoViewModel extends BaseViewModel {

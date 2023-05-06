@@ -21,7 +21,7 @@ import 'data/local/shared_preferences/shared_preferences.dart' as _i10;
 import 'data/network/api_client.dart' as _i3;
 import 'data/network/api_module.dart' as _i12;
 import 'data/network/api_service.dart' as _i4;
-import 'resource/dialog_common.dart' as _i6;
+import 'resource/dialog/dialog_common.dart' as _i6;
 import 'view/demo/demo_view_model.dart' as _i11;
 
 extension GetItInjectableX on _i1.GetIt {

@@ -51,6 +51,7 @@ extension GetItInjectableX on _i1.GetIt {
           gh<_i4.ApiService>(),
           gh<_i6.DialogCommon>(),
           gh<_i9.RealmDatabase>(),
+          gh<_i10.SharedPreference>(),
         ));
     return this;
   }

@@ -17,22 +17,26 @@ class DemoViewModel extends BaseViewModel {
   final ApiService _apiService;
   final DialogCommon _dialogCommon;
   final RealmDatabase _realmDatabase;
+  final SharedPreference _sharedPreference;
 
-  DemoViewModel(this._apiService, this._dialogCommon, this._realmDatabase);
+  DemoViewModel(this._apiService, this._dialogCommon, this._realmDatabase, this._sharedPreference);
 
   Rx<EntryResponse?> entryRx = Rx(null);
 
   @override
   void onInit() async {
     super.onInit();
-    //await _sharedPreference.saveToken(value: 'TOKEN HERE=12333');
+
+    /// SHARED_PREFERENCE
+    await _sharedPreference.save(key: 'test', value: 'SAVE LOCAL');
+    print('sharedPreference====${await _sharedPreference.get(key: 'test', type: '')}');
 
     /// API
     //getEntry();
 
     /// REALM
-    _demoInsertOrUpdateProfile();
-    print('profile====${_realmDatabase.getProfiles()[0].hobby?.name}');
+    //_demoInsertOrUpdateProfile();
+    //print('profile====${_realmDatabase.getProfiles()[0].hobby?.name}');
   }
 
   ///

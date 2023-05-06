@@ -1,12 +1,12 @@
 # build android and ios
-- flutter run -t lib/main_dev.dart --flavor dev
+    - flutter run -t lib/main_dev.dart --flavor dev
 
 # add injectable
-- flutter packages pub run build_runner build
-- flutter packages pub run build_runner build --delete-conflicting-outputs (run when Conflicting)
+    - flutter packages pub run build_runner build
+    - flutter packages pub run build_runner build --delete-conflicting-outputs (run when Conflicting)
 
 # realm
-- flutter pub run realm generate
+    - flutter pub run realm generate
 
 # flavor
 - # IOS

@@ -75,12 +75,6 @@ android {
             resValue "string", "app_name", "[STG] FLUTTER"
             applicationIdSuffix ".stg"
         }
-//        prod {
-//            dimension "app"
-//            applicationId "com.ajc_systems.local_helper"
-//            applicationIdSuffix ".poke_eme_citizens"
-//            resValue "string", "app_name", "ポケコム"
-//        }
     }
 }
 

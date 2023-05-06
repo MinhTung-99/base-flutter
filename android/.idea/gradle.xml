@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -9,6 +10,7 @@
         <option name="modules">
           <set>
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/connectivity_plus-3.0.3/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/realm-1.0.3/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/shared_preferences_android-2.1.0/android" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />

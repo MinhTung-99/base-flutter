@@ -16,3 +16,9 @@
 *.apk
 *.apk
 *.sha1
+*.stamp
+*.d
+*.d
+*.stamp
+*.dill
+.dart_tool/flutter_build/4b24b75790a1f78cade90ae953377d13/.filecache

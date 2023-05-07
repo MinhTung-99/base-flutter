@@ -1,6 +1,7 @@
 
 import 'package:base_flutter/application/widgets/date_picker_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../application/base/ui/base_stateful_view.dart';
@@ -19,6 +20,8 @@ class DemoScreen extends StatefulViewBase {
 
 class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
 
+  static const platform = MethodChannel('NATIVE_CODE');
+
   @override
   // TODO: implement backgroundColor
   Color? get backgroundColor => Colors.white;
@@ -33,10 +36,17 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
           onTap: () {
             viewModel.showAlertDialog(context);
           },
-          child: Text('showDialog'),
+          child: const Text('showDialog'),
         ),
 
-        const DatePickerWidget()
+        const DatePickerWidget(),
+
+        GestureDetector(
+          onTap: () {
+            platform.invokeMethod('openBrowser');
+          },
+          child: const Text('open browser native code'),
+        ),
       ],
     );
   }

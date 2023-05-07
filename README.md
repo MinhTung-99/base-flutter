@@ -33,3 +33,6 @@
       - flutter build apk --no-sound-null-safety --release --no-tree-shake-icons --no-shrink -t lib/main_dev.dart --flavor dev -> apk
       - flutter build appbundle --no-sound-null-safety --release --no-tree-shake-icons -t lib/main_prod.dart --flavor prod -> aab
       - PROD: flutter build appbundle --no-sound-null-safety --release --no-tree-shake-icons -t lib/main_prod.dart --flavor prod -> aab
+
+# GIT IGNORE
+      - git rm -r --cached file

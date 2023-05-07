@@ -1,6 +1,5 @@
 
 *.stamp
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/.filecache
 *.dill
 *.stamp
 *.d
@@ -21,11 +20,4 @@
 *.d
 *.stamp
 *.dill
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/.filecache
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/app.dill
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/debug_android_application.stamp
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/flutter_assets.d
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/kernel_snapshot.d
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/kernel_snapshot.stamp
-.flutter-plugins-dependencies
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/kernel_snapshot.d
+*.dill

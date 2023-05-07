@@ -21,77 +21,11 @@
 *.d
 *.stamp
 *.dill
-.dart_tool/flutter_build/4b24b75790a1f78cade90ae953377d13/.filecache
-
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.buildlog/
-.history
-.svn/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
-/build/
-
-# Web related
-lib/generated_plugin_registrant.dart
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-
-# /ios/Runner.xcodeproj/
-*.xcuserstate
-.metals/metals.lock.db
-ios/Flutter/Generated.xcconfig
-ios/Flutter/flutter_export_environment.sh
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/app.dill
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/.filecache
 .dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/app.dill
 .dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/debug_android_application.stamp
 .dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/flutter_assets.d
 .dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/kernel_snapshot.d
 .dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/kernel_snapshot.stamp
 .flutter-plugins-dependencies
-build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill
-build/app/intermediates/apk_ide_redirect_file/devDebug/redirect.txt
-build/app/intermediates/assets/devDebug/mergeDevDebugAssets/flutter_assets/kernel_blob.bin
-build/app/intermediates/flutter/devDebug/libs.jar
-build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/devDebug/R.jar
-build/app/intermediates/assets/devDebug/mergeDevDebugAssets/flutter_assets/kernel_blob.bin
-.flutter-plugins-dependencies
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/kernel_snapshot.stamp
 .dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/kernel_snapshot.d
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/flutter_assets.d
-.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/debug_android_application.stamp
-build/app/intermediates/merged_res/devDebug/values-is_values-is.arsc.flat
-*.flat

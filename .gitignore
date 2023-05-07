@@ -21,8 +21,6 @@
 *.stamp
 *.dill
 *.dill
-.flutter-plugins-dependencies
 *.json
 .dart_tool/flutter_build/73d71456419b83414c67925df200f8dd/App.framework/App
 .dart_tool/flutter_build/73d71456419b83414c67925df200f8dd/.filecache
-.flutter-plugins-dependencies

@@ -36,3 +36,4 @@
 
 # GIT IGNORE
       - git rm -r --cached file
+      - add path file to .gitignore

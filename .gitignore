@@ -75,3 +75,13 @@ app.*.map.json
 .metals/metals.lock.db
 ios/Flutter/Generated.xcconfig
 ios/Flutter/flutter_export_environment.sh
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/app.dill
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/app.dill
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/debug_android_application.stamp
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/flutter_assets.d
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/kernel_snapshot.d
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/kernel_snapshot.stamp
+.flutter-plugins-dependencies
+build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill
+build/app/intermediates/apk_ide_redirect_file/devDebug/redirect.txt
+build/app/intermediates/assets/devDebug/mergeDevDebugAssets/flutter_assets/kernel_blob.bin

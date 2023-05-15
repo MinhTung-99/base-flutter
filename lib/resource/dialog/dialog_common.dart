@@ -1,4 +1,4 @@
-import 'package:base_flutter/application/compnents/dialog_component.dart';
+import 'package:base_flutter/application/components/dialog_component.dart';
 import 'package:base_flutter/application/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

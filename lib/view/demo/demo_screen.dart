@@ -1,10 +1,10 @@
-import 'package:base_flutter/application/compnents/item_bottom_navigation_component.dart';
 import 'package:base_flutter/application/widgets/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../application/base/ui/base_stateful_view.dart';
+import '../../application/widgets/bottom_navigation_widget.dart';
 import 'demo_view_model.dart';
 
 class DemoScreen extends StatefulViewBase {
@@ -52,17 +52,11 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
 
   @override
   Widget? buildBottomNavigationBar(BuildContext context) {
-    // TODO: implement buildBottomNavigationBar
-    return Container(
-      height: 60,
-      color: Colors.blue,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
-          ItemBottomNavigationComponent(),
-          ItemBottomNavigationComponent()
-        ],
-      ),
+
+    return const BottomNavigationWidget(
+      numberOfItem: 3,
+      bottomNavHeight: 70,
+      bottomNavBackgroundColor: Colors.blue,
     );
   }
 }

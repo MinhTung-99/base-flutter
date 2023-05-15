@@ -26,6 +26,9 @@ class DemoViewModel extends BaseViewModel {
   void onInit() async {
     super.onInit();
 
+    /// BOTTOM NAV
+
+
     /// SHARED_PREFERENCE
     await _sharedPreference.save(key: 'test', value: 'SAVE LOCAL');
     print('sharedPreference====${await _sharedPreference.get(key: 'test', type: '')}');

@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../application/widgets/drawer_widget.dart';
 import '../../data/local/realm/realm_database.dart';
 import '../../data/local/realm/realm_table.dart';
 import '../../resource/dialog/dialog_common.dart';
@@ -25,9 +26,6 @@ class DemoViewModel extends BaseViewModel {
   @override
   void onInit() async {
     super.onInit();
-
-    /// BOTTOM NAV
-
 
     /// SHARED_PREFERENCE
     await _sharedPreference.save(key: 'test', value: 'SAVE LOCAL');

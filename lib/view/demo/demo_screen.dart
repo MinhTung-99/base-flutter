@@ -1,4 +1,5 @@
 import 'package:base_flutter/application/widgets/date_picker_widget.dart';
+import 'package:base_flutter/application/widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -25,11 +26,30 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
   late List<Widget> screenBottomNavigation;
   late Rx<Widget> screen;
 
+  ///DRAWER
+  final List<DrawerItem> drawerItems = [];
+
   @override
   void initState() {
     super.initState();
-    screenBottomNavigation = [_FirstScreen(viewModel: viewModel, platform: platform,), _SecondScreen(), _ThirdScreen()];
+
+    /// BOTTOM NAVIGATION
+    screenBottomNavigation = [
+      _FirstScreen(
+        viewModel: viewModel,
+        platform: platform,
+      ),
+      _SecondScreen(),
+      _ThirdScreen()
+    ];
     screen = Rx(screenBottomNavigation[0]);
+
+    /// DRAWABLE
+    keyScaffold = GlobalKey();
+
+    drawerItems.add(const DrawerItem(itemWidget: ItemDrawerWidget(title: 'menu 1', backgroundColor: Colors.blue,)));
+    drawerItems.add(const DrawerItem(itemWidget: ItemDrawerWidget(title: 'menu 2', backgroundColor: Colors.lightGreen,)));
+    ///
   }
 
   @override
@@ -39,12 +59,30 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
 
   @override
   PreferredSizeWidget? buildAppBar(BuildContext context) {
-    return AppBar();
+    return AppBar(
+      leading: GestureDetector(
+        onTap: () {
+          keyScaffold?.currentState?.openDrawer();
+        },
+        child: const Icon(Icons.circle_rounded),
+      ),
+
+      /// ICON DRAWABLE
+    );
+  }
+
+  @override
+  Widget? buildDrawer(BuildContext context) {
+    return DrawerWidget(
+      drawerItems: drawerItems,
+      onClickItem: (index) {
+        keyScaffold?.currentState?.closeDrawer();
+      },
+    );
   }
 
   @override
   Widget? buildBottomNavigationBar(BuildContext context) {
-
     return BottomNavigationWidget(
       positionFirstItemSelected: 0,
       numberOfItem: screenBottomNavigation.length,
@@ -59,7 +97,6 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
 
 ///
 class _FirstScreen extends StatelessWidget {
-
   const _FirstScreen({required this.viewModel, required this.platform});
 
   final DemoViewModel viewModel;
@@ -84,15 +121,18 @@ class _FirstScreen extends StatelessWidget {
           child: const Text('open browser native code'),
         ),
       ],
-    );;
+    );
+    ;
   }
 }
+
 class _SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text('2');
   }
 }
+
 class _ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

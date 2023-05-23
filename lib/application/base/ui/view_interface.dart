@@ -38,19 +38,22 @@ mixin ViewInterface {
 
   Color? backgroundColor;
 
+  GlobalKey<ScaffoldState>? keyScaffold;
+
   /// buildPage
   Widget buildPage(BuildContext context) {
     return //KeyboardAutoDismiss(scaffold:
       Scaffold(
+        key: keyScaffold,
       // resizeToAvoidBottomInset: false,
-      backgroundColor: backgroundColor,
-      appBar: buildAppBar(context),
-      body: buildBody(context),
-      bottomNavigationBar: buildBottomNavigationBar(context),
-      bottomSheet: buildBottomSheet(context),
-      drawer: buildDrawer(context),
-      endDrawer: buildEndDrawer(context),
-      floatingActionButton: buildFloatActionButton(context),
+        backgroundColor: backgroundColor,
+        appBar: buildAppBar(context),
+        body: buildBody(context),
+        bottomNavigationBar: buildBottomNavigationBar(context),
+        bottomSheet: buildBottomSheet(context),
+        drawer: buildDrawer(context),
+        endDrawer: buildEndDrawer(context),
+        floatingActionButton: buildFloatActionButton(context),
     //)
     );
   }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../responsives/responsive.dart';
 import '../responsives/size_config.dart';
-import '../widgets/auto_hide_keyboard_widget.dart';
+import 'auto_hide_keyboard_component.dart';
 
 class DialogComponent extends StatelessWidget {
   DialogComponent(
@@ -64,7 +64,7 @@ class DialogComponent extends StatelessWidget {
   }
 
   Widget _contentDialogWidget({required BuildContext context, required BoxConstraints constraints }) {
-    return AutoHideKeyboardWidget(
+    return AutoHideKeyboardComponent(
       child: Container(
         constraints: _getBoxConstraint(constraints: constraints, context: context),
         width: _getWith(context),

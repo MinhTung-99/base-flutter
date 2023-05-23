@@ -1,8 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 
-class AutoHideKeyboardWidget extends StatelessWidget {
-  const AutoHideKeyboardWidget({
+class AutoHideKeyboardComponent extends StatelessWidget {
+  const AutoHideKeyboardComponent({
     required this.child,
     Key? key,
   }) : super(key: key);

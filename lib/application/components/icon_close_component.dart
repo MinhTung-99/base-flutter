@@ -1,9 +1,9 @@
 
 import 'package:flutter/cupertino.dart';
 
-class IconCloseWidget extends StatelessWidget {
+class IconCloseComponent extends StatelessWidget {
 
-  const IconCloseWidget({super.key});
+  const IconCloseComponent({super.key});
 
   @override
   Widget build(BuildContext context) {

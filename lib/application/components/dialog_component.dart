@@ -1,5 +1,5 @@
 import 'package:base_flutter/application/themes/app_text_styles.dart';
-import 'package:base_flutter/application/widgets/icon_close_widget.dart';
+import 'package:base_flutter/application/components/icon_close_component.dart';
 import 'package:flutter/material.dart';
 
 import '../responsives/responsive.dart';
@@ -156,7 +156,7 @@ class DialogComponent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.end,
         children: const [
-          IconCloseWidget(),
+          IconCloseComponent(),
         ],
       ),
     );

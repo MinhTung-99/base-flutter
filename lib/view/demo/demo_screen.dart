@@ -101,7 +101,7 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
 ///
 class _FirstScreen extends StatelessWidget {
 
-  _FirstScreen({required this.viewModel, required this.platform});
+  const _FirstScreen({required this.viewModel, required this.platform});
 
   final _eventChannel = const EventChannel('EVENT_CHANNEL');
   final _secondEventChannel = const EventChannel('SECOND_EVENT_CHANNEL');

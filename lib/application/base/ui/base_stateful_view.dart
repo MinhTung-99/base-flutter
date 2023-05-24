@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:lifecycle/lifecycle.dart';
 import '../view_model/base_view_model.dart';
 
-abstract class BaseStateFulView<Page extends StatefulViewBase,
+abstract class BaseStateFulView<Page extends StatefulWidget,
         ViewModel extends BaseViewModel>
     extends State<Page>
     with
@@ -90,8 +90,4 @@ abstract class BaseStateFulView<Page extends StatefulViewBase,
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
-}
-
-abstract class StatefulViewBase extends StatefulWidget {
-  const StatefulViewBase({super.key});
 }

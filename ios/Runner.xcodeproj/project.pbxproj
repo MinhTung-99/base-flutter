@@ -15,6 +15,8 @@
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		A6D75A8B2A0A1F4F00DCFD4B /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D75A8A2A0A1F4F00DCFD4B /* Browser.swift */; };
+		A6D75A8D2A1DA3AC00DCFD4B /* MyEventChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D75A8C2A1DA3AC00DCFD4B /* MyEventChannel.swift */; };
+		A6D75A8F2A1DB8ED00DCFD4B /* MySecondEventChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D75A8E2A1DB8ED00DCFD4B /* MySecondEventChannel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +52,8 @@
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6D75A8A2A0A1F4F00DCFD4B /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
+		A6D75A8C2A1DA3AC00DCFD4B /* MyEventChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventChannel.swift; sourceTree = "<group>"; };
+		A6D75A8E2A1DB8ED00DCFD4B /* MySecondEventChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySecondEventChannel.swift; sourceTree = "<group>"; };
 		AEAA0455760B764FEA5CC841 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +119,8 @@
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
 				A6D75A8A2A0A1F4F00DCFD4B /* Browser.swift */,
+				A6D75A8C2A1DA3AC00DCFD4B /* MyEventChannel.swift */,
+				A6D75A8E2A1DB8ED00DCFD4B /* MySecondEventChannel.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -280,6 +286,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D75A8F2A1DB8ED00DCFD4B /* MySecondEventChannel.swift in Sources */,
+				A6D75A8D2A1DA3AC00DCFD4B /* MyEventChannel.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				A6D75A8B2A0A1F4F00DCFD4B /* Browser.swift in Sources */,

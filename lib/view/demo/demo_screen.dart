@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:base_flutter/application/widgets/date_picker_widget.dart';
 import 'package:base_flutter/application/widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,9 @@ class DemoScreen extends StatefulViewBase {
 }
 
 class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
-  static const platform = MethodChannel('NATIVE_CODE');
+  final _methodChannel = const MethodChannel('METHOD_CHANNEL');
+  final _eventChannel = const EventChannel('EVENT_CHANNEL');
+  final _secondEventChannel = const EventChannel('SECOND_EVENT_CHANNEL');
 
   @override
   Color? get backgroundColor => Colors.white;
@@ -29,15 +33,36 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
   ///DRAWER
   final List<DrawerItem> drawerItems = [];
 
+  late StreamSubscription subscription;
+
+  void callEventChannel() {
+    subscription = _eventChannel.receiveBroadcastStream("EVENT_CHANNEL").listen((message) {
+      // Handle incoming message
+      print('EventChannel===$message');
+    });
+    //subscription.cancel();
+  }
+
+  void callSecondEventChannel() {
+    subscription = _secondEventChannel.receiveBroadcastStream("SECOND_EVENT_CHANNEL").listen((message) {
+      // Handle incoming message
+      print('SecondEventChannel===$message');
+    });
+    //subscription.cancel();
+  }
+
   @override
   void initState() {
     super.initState();
+
+    callEventChannel();
+    callSecondEventChannel();
 
     /// BOTTOM NAVIGATION
     screenBottomNavigation = [
       _FirstScreen(
         viewModel: viewModel,
-        platform: platform,
+        platform: _methodChannel,
       ),
       _SecondScreen(),
       _ThirdScreen()

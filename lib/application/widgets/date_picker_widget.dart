@@ -1,8 +1,9 @@
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../resource/date_picker/date_local.dart';
 import '../../resource/date_picker/date_picker_language.dart';
+import 'button_widget.dart';
 
 class DatePickerWidget extends StatelessWidget {
 
@@ -10,11 +11,15 @@ class DatePickerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        _showDatePicker(context);
-      },
-      child: Text('datePicker'),
+    return ButtonWidget(
+        width: 150,
+        height: 50,
+        radius: 0,
+        colorBackground: Colors.blue,
+        text: 'OPEN DATE PICKER',
+        onTab: () {
+          _showDatePicker(context);
+        }
     );
   }
 

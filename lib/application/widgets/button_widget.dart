@@ -1,5 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
@@ -67,7 +68,7 @@ class ButtonWidget extends StatelessWidget {
     return BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
         color: colorBackground,
-        border: Border.all(color: colorBorder ?? const Color(0xFF000000), width: widthBorder ?? 1.0),
+        border: Border.all(color: colorBorder ?? Colors.transparent, width: widthBorder ?? 1.0),
         boxShadow: boxShadows);
   }
 

@@ -24,3 +24,6 @@
 *.json
 .dart_tool/flutter_build/73d71456419b83414c67925df200f8dd/App.framework/App
 .dart_tool/flutter_build/73d71456419b83414c67925df200f8dd/.filecache
+*.ap_
+build/app/intermediates/incremental/packageDevDebug/tmp/devDebug/zip-cache/androidResources
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/.filecache

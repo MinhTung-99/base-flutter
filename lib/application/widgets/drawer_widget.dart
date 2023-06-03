@@ -2,39 +2,51 @@ import 'package:flutter/material.dart';
 
 class DrawerWidget extends StatelessWidget {
 
-  const DrawerWidget({super.key, required this.drawerItems, required this.onClickItem});
+  const DrawerWidget({super.key, required this.drawerItems, required this.onClickItem, this.headerWidget});
 
   final List<DrawerItem> drawerItems;
 
   final Function(int index) onClickItem;
 
+  final Widget? headerWidget;
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: DrawerItemComponent(drawerItems: drawerItems, onClickItem: onClickItem,),
+      child: DrawerItemComponent(drawerItems: drawerItems, onClickItem: onClickItem, headerWidget: headerWidget,),
     );
   }
 }
 
 class DrawerItemComponent extends StatelessWidget {
-  const DrawerItemComponent({super.key, required this.drawerItems, required this.onClickItem});
+  const DrawerItemComponent({super.key, required this.drawerItems, required this.onClickItem, required this.headerWidget});
 
   final List<DrawerItem> drawerItems;
 
   final Function(int index) onClickItem;
 
+  final Widget? headerWidget;
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: drawerItems.length,
-        itemBuilder: (BuildContext context, int index) {
-          return GestureDetector(
-            onTap: () {
-              onClickItem(index);
-            },
-            child: drawerItems[index].itemWidget,
-          );
-        });
+    return Column(
+      children: [
+        if (headerWidget != null)...[
+          headerWidget!
+        ],
+        ListView.builder(
+            itemCount: drawerItems.length,
+            shrinkWrap: true,
+            itemBuilder: (BuildContext context, int index) {
+              return GestureDetector(
+                onTap: () {
+                  onClickItem(index);
+                },
+                child: drawerItems[index].itemWidget,
+              );
+            })
+      ],
+    );
   }
 }
 

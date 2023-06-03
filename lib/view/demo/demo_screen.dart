@@ -21,8 +21,10 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
   @override
   Color? get backgroundColor => Colors.white;
 
-  late List<Widget> screenBottomNavigation;
+  ///BOTTOM NAVIGATION
+  late List<Widget> screens;
   late Rx<Widget> screen;
+  late List<ItemBottomNav> itemBottomNav;
 
   ///DRAWER
   final List<DrawerItem> drawerItems = [];
@@ -30,20 +32,28 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
   @override
   void initState() {
     super.initState();
-
-    /// BOTTOM NAVIGATION
-    screenBottomNavigation = [
+    ///SCREEN
+    screens = [
       ButtonScreen(viewModel: viewModel,),
       _SecondScreen(viewModel: viewModel,),
       _ThirdScreen()
     ];
-    screen = Rx(screenBottomNavigation[0]);
+
+    /// BOTTOM NAVIGATION
+    itemBottomNav = [
+      ItemBottomNav(title: 'BUTTON', icon: const Icon(Icons.ad_units), isSelectedItem: Rx(true)),
+      ItemBottomNav(title: 'DATA', icon: const Icon(Icons.account_balance_wallet), isSelectedItem: Rx(false)),
+      ItemBottomNav(title: 'OTHER', icon: const Icon(Icons.account_tree), isSelectedItem: Rx(false))
+    ];
+    screen = Rx(screens[0]);
+    ///
 
     /// DRAWABLE
     keyScaffold = GlobalKey();
 
     drawerItems.add(const DrawerItem(itemWidget: ItemDrawerWidget(title: 'menu 1', backgroundColor: Colors.blue,)));
     drawerItems.add(const DrawerItem(itemWidget: ItemDrawerWidget(title: 'menu 2', backgroundColor: Colors.lightGreen,)));
+    drawerItems.add(const DrawerItem(itemWidget: ItemDrawerWidget(title: 'menu 3', backgroundColor: Colors.limeAccent,)));
     ///
   }
 
@@ -69,8 +79,14 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
   @override
   Widget? buildDrawer(BuildContext context) {
     return DrawerWidget(
+      headerWidget: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.only(top: 60, bottom: 10),
+        child: const Text('HEADER', style: TextStyle(color: Colors.red, fontSize: 20),),
+      ),
       drawerItems: drawerItems,
       onClickItem: (index) {
+        screen.value = screens[index];
         keyScaffold?.currentState?.closeDrawer();
       },
     );
@@ -79,12 +95,14 @@ class DemoViewState extends BaseStateFulView<DemoScreen, DemoViewModel> {
   @override
   Widget? buildBottomNavigationBar(BuildContext context) {
     return BottomNavigationWidget(
-      positionFirstItemSelected: 0,
-      numberOfItem: screenBottomNavigation.length,
+      withItem: 80,
       bottomNavHeight: 70,
+      paddingItemWidget: const EdgeInsets.all(5),
+      marginItemWidget: const EdgeInsets.all(7),
+      itemBottomNav: itemBottomNav,
       bottomNavBackgroundColor: Colors.blue,
       onItemChange: (index) {
-        screen.value = screenBottomNavigation[index];
+        screen.value = screens[index];
       },
     );
   }

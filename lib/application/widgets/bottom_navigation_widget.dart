@@ -4,15 +4,15 @@ import 'package:get/get.dart';
 class BottomNavigationWidget extends StatefulWidget {
   const BottomNavigationWidget(
       {super.key,
-        this.positionFirstItemSelected,
-      required this.numberOfItem,
+      required this.itemBottomNav,
       required this.bottomNavHeight,
       required this.bottomNavBackgroundColor,
-      required this.onItemChange});
+      required this.onItemChange,
+      required this.withItem,
+      this.paddingItemWidget,
+      this.marginItemWidget});
 
-  final int numberOfItem;
-
-  final int? positionFirstItemSelected;
+  final List<ItemBottomNav> itemBottomNav;
 
   final double bottomNavHeight;
 
@@ -20,40 +20,37 @@ class BottomNavigationWidget extends StatefulWidget {
 
   final Function(int index) onItemChange;
 
+  final double withItem;
+
+  final EdgeInsetsGeometry? paddingItemWidget;
+  final EdgeInsetsGeometry? marginItemWidget;
+
   @override
   State<StatefulWidget> createState() => _BottomNavigation();
 }
 
 class _BottomNavigation extends State<BottomNavigationWidget> {
-  final List<ItemBottomNav> bottomNav = [];
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-    bottomNav.clear();
-    for (int i = 0; i < widget.numberOfItem; i++) {
-      ItemBottomNav itemBottomNav = ItemBottomNav();
-      itemBottomNav.isSelectedItem.value = (i == widget.positionFirstItemSelected);
-      bottomNav.add(itemBottomNav);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       height: widget.bottomNavHeight,
+      width: widget.bottomNavHeight,
       color: widget.bottomNavBackgroundColor,
       child: Obx(() => Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ...List.generate(
-                  bottomNav.length,
+                  widget.itemBottomNav.length,
                   (index) => ItemBottomNavigationComponent(
-                        isSelectedItem: bottomNav[index].isSelectedItem.value,
+                        paddingItemWidget: widget.paddingItemWidget,
+                        marginItemWidget: widget.marginItemWidget,
+                        withItem: widget.withItem,
+                        icon: widget.itemBottomNav[index].icon,
+                        title: widget.itemBottomNav[index].title,
+                        isSelectedItem:
+                            widget.itemBottomNav[index].isSelectedItem.value,
                         onItemChange: () {
-                          _onItemChange(bottomNav[index]);
+                          _onItemChange(widget.itemBottomNav[index]);
 
                           widget.onItemChange(index);
                         },
@@ -69,7 +66,7 @@ class _BottomNavigation extends State<BottomNavigationWidget> {
   }
 
   void _refreshSelectedItemFalse() {
-    for (var element in bottomNav) {
+    for (var element in widget.itemBottomNav) {
       element.isSelectedItem.value = false;
     }
   }
@@ -77,11 +74,24 @@ class _BottomNavigation extends State<BottomNavigationWidget> {
 
 /// Item component
 class ItemBottomNavigationComponent extends StatelessWidget {
-
-  const ItemBottomNavigationComponent({super.key, required this.isSelectedItem, required this.onItemChange});
+  const ItemBottomNavigationComponent(
+      {super.key,
+      required this.paddingItemWidget,
+      required this.marginItemWidget,
+      required this.isSelectedItem,
+      required this.onItemChange,
+      required this.icon,
+      required this.title,
+      required this.withItem});
 
   final bool isSelectedItem;
   final Function onItemChange;
+  final Widget icon;
+  final String title;
+  final double withItem;
+
+  final EdgeInsetsGeometry? paddingItemWidget;
+  final EdgeInsetsGeometry? marginItemWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -90,34 +100,42 @@ class ItemBottomNavigationComponent extends StatelessWidget {
         onItemChange();
       },
       child: Container(
-        width: 60,
-        height: 60,
-        padding: const EdgeInsets.symmetric(horizontal: 3),
-        decoration: isSelectedItem ? const BoxDecoration(
-          color: Colors.white,
-          shape: BoxShape.circle,
-        ) : null,
+        width: withItem,
+        height: double.infinity,
+        padding: paddingItemWidget,
+        margin: marginItemWidget,
+        decoration: isSelectedItem
+            ? const BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.rectangle,
+              )
+            : null,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(Icons.home),
-            Text('Home', textAlign: TextAlign.center,)
+          children: [
+            icon,
+            Expanded(child: Text(
+              title,
+              textAlign: TextAlign.center,
+            ))
           ],
         ),
       ),
     );
   }
-
 }
 
 ///
 class ItemBottomNav {
-  Rx<bool> isSelectedItem = Rx(false);
+  ItemBottomNav({required this.title, required this.icon, required this.isSelectedItem});
+
+  Rx<bool> isSelectedItem;
+  final String title;
+  final Widget icon;
 }
 
 ///
 class BottomNavigationBody extends StatelessWidget {
-
   const BottomNavigationBody({super.key, required this.screen});
 
   final Widget screen;
@@ -126,5 +144,4 @@ class BottomNavigationBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return screen;
   }
-
 }

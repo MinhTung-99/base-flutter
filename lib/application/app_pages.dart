@@ -12,6 +12,6 @@ class AppPages {
       name: DemoScreen.router,
       page: () => const DemoScreen(),
       binding: DemoBinding()
-      )
+      ),
   ];
 }

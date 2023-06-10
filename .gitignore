@@ -27,3 +27,8 @@
 *.ap_
 build/app/intermediates/incremental/packageDevDebug/tmp/devDebug/zip-cache/androidResources
 .dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/.filecache
+.dart_tool/package_config_subset
+.dart_tool/package_config.json
+.dart_tool/flutter_build/e6e76962aea633c4fd2115ffdcae76bb/.filecache
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/.filecache
+*.xml

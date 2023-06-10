@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../application/widgets/drawer_widget.dart';
+import '../../application/widgets/dropdown_widget.dart';
 import '../../data/local/realm/realm_database.dart';
 import '../../data/local/realm/realm_table.dart';
 import '../../resource/dialog/dialog_common.dart';
@@ -23,9 +24,22 @@ class DemoViewModel extends BaseViewModel {
 
   Rx<EntryResponse?> entryRx = Rx(null);
 
+  List<DropDownValueModel> items = [];
+
   @override
   void onInit() async {
     super.onInit();
+
+    items.add(DropDownValueModel(name: 'ABCCCC', value: 'ABCCBCC'));
+    items.add(DropDownValueModel(name: 'ABCCCC1', value: 'ABCCBCC1'));
+    items.add(DropDownValueModel(name: 'ABCCCC2', value: 'ABCCBCC2'));
+    items.add(DropDownValueModel(name: 'ABCCCC3', value: 'ABCCBCC3'));
+    items.add(DropDownValueModel(name: 'ABCCCC4', value: 'ABCCBCC4'));
+    items.add(DropDownValueModel(name: 'ABCCCC5', value: 'ABCCBCC5'));
+    items.add(DropDownValueModel(name: 'ABCCCC6', value: 'ABCCBCC6'));
+    items.add(DropDownValueModel(name: 'ABCCCC7', value: 'ABCCBCC7'));
+    items.add(DropDownValueModel(name: 'ABCCCC8', value: 'ABCCBCC8'));
+    items.add(DropDownValueModel(name: 'ABCCCC9', value: 'ABCCBCC9'));
 
     /// SHARED_PREFERENCE
     await _sharedPreference.save(key: 'test', value: 'SAVE LOCAL');

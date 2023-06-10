@@ -1,3 +1,4 @@
+import 'package:base_flutter/application/widgets/dropdown_widget.dart';
 import 'package:base_flutter/view/demo/demo_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -91,6 +92,13 @@ class ButtonViewState extends State<ButtonScreen> {
               onTab: () {
                 callSecondEventChannel();
               }
+          ),
+          _spacing10(),
+          DropDownWidget(
+            hintText: 'NOTHING',
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            dropDownList: widget.viewModel.items,
+            singleController: SingleValueDropDownController(data: const DropDownValueModel(name: 'ABCCCC', value: 'ABCCBCC')),
           )
         ],
       ),

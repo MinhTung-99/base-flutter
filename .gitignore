@@ -32,3 +32,12 @@ build/app/intermediates/incremental/packageDevDebug/tmp/devDebug/zip-cache/andro
 .dart_tool/flutter_build/e6e76962aea633c4fd2115ffdcae76bb/.filecache
 .dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/.filecache
 *.xml
+.dart_tool/flutter_build/87ec412bb146ea009b1855332f1672f7/.filecache
+.dart_tool/flutter_build/87ec412bb146ea009b1855332f1672f7/outputs.json
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/.filecache
+.dart_tool/flutter_build/d41d7e6dc571cf5d8ff1dfbedce3dd66/outputs.json
+.dart_tool/flutter_build/fb3d7f3b8986ab36a63eed9abf2471bf/.filecache
+.dart_tool/package_config.json
+.dart_tool/package_config_subset
+.idea/base-flutter.iml
+.idea/libraries/Dart_Packages.xml

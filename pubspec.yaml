@@ -59,6 +59,10 @@ dependencies:
 
   equatable: ^2.0.5
 
+  #number_paginator: ^0.2.3
+
+  flutter_svg: ^2.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

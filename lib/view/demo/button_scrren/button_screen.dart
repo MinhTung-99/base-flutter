@@ -1,4 +1,5 @@
 import 'package:base_flutter/application/widgets/dropdown_widget.dart';
+import 'package:base_flutter/application/widgets/paging_widget.dart';
 import 'package:base_flutter/view/demo/demo_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,22 +23,26 @@ class ButtonViewState extends State<ButtonScreen> {
   final _secondEventChannel = const EventChannel('SECOND_EVENT_CHANNEL');
 
   void callEventChannel() {
-    final subscription = _eventChannel.receiveBroadcastStream("EVENT_CHANNEL").listen((message) {
+    final subscription =
+        _eventChannel.receiveBroadcastStream("EVENT_CHANNEL").listen((message) {
       print('EventChannel===$message');
     });
     //subscription.cancel();
   }
 
   void callSecondEventChannel() {
-    final subscription = _secondEventChannel.receiveBroadcastStream("SECOND_EVENT_CHANNEL").listen((message) {
+    final subscription = _secondEventChannel
+        .receiveBroadcastStream("SECOND_EVENT_CHANNEL")
+        .listen((message) {
       print('SecondEventChannel===$message');
     });
     //subscription.cancel();
   }
 
-
   Widget _spacing10() {
-    return const SizedBox(height: 10,);
+    return const SizedBox(
+      height: 10,
+    );
   }
 
   @override
@@ -56,8 +61,7 @@ class ButtonViewState extends State<ButtonScreen> {
               text: 'OPEN DIALOG',
               onTab: () {
                 widget.viewModel.showAlertDialog(context);
-              }
-          ),
+              }),
           _spacing10(),
           const DatePickerWidget(),
           _spacing10(),
@@ -69,8 +73,7 @@ class ButtonViewState extends State<ButtonScreen> {
               text: 'OPEN BROWSER NATIVE CODE',
               onTab: () {
                 _methodChannel.invokeMethod('openBrowser');
-              }
-          ),
+              }),
           _spacing10(),
           ButtonWidget(
               width: 200,
@@ -80,8 +83,7 @@ class ButtonViewState extends State<ButtonScreen> {
               text: 'EVENT CHANNEL',
               onTab: () {
                 callEventChannel();
-              }
-          ),
+              }),
           _spacing10(),
           ButtonWidget(
               width: 200,
@@ -91,14 +93,22 @@ class ButtonViewState extends State<ButtonScreen> {
               text: 'SECOND EVENT CHANNEL',
               onTab: () {
                 callSecondEventChannel();
-              }
-          ),
+              }),
           _spacing10(),
           DropDownWidget(
             hintText: 'NOTHING',
             padding: const EdgeInsets.symmetric(horizontal: 10),
             dropDownList: widget.viewModel.items,
-            singleController: SingleValueDropDownController(data: const DropDownValueModel(name: 'ABCCCC', value: 'ABCCBCC')),
+            singleController: SingleValueDropDownController(
+                data:
+                    const DropDownValueModel(name: 'ABCCCC', value: 'ABCCBCC')),
+          ),
+          PagingWidget(
+            currentPage: 1,
+            numberOfPages: 6,
+            onPageChange: (index) {
+
+            },
           )
         ],
       ),

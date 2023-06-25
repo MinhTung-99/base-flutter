@@ -25,11 +25,7 @@ class PaginatorButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Opacity(
-      opacity: isArrow == false
-          ? 1
-          : (isArrow && selected)
-              ? 1
-              : 0.3,
+      opacity: _getOpacity(),
       child: Container(
           margin: InheritedNumberPaginator.of(context).config.paddingPage,
           width: InheritedNumberPaginator.of(context).config.withPage,
@@ -37,21 +33,32 @@ class PaginatorButton extends StatelessWidget {
           child: TextButton(
             onPressed: onPressed,
             style: TextButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                      InheritedNumberPaginator.of(context)
-                              .config
-                              .buttonBorderRadius ??
-                          0),
-                  side: _borderSideColor(context)),
-              backgroundColor:
-                  isArrow ? null : _backgroundColor(context, selected),
-              foregroundColor:
-                  isArrow ? null : _foregroundColor(context, selected),
+              shape: _getShape(context),
+              backgroundColor: _backgroundColor(context, selected),
+              foregroundColor: _foregroundColor(context, selected),
             ),
             child: child,
           )),
     );
+  }
+
+  OutlinedBorder _getShape(BuildContext context) {
+    return RoundedRectangleBorder(
+        borderRadius: _getBorderRadius(context),
+        side: _borderSideColor(context));
+  }
+
+  BorderRadiusGeometry _getBorderRadius(BuildContext context) {
+    return BorderRadius.circular(
+        InheritedNumberPaginator.of(context).config.buttonBorderRadius ?? 0);
+  }
+
+  double _getOpacity() {
+    return isArrow == false
+        ? 1
+        : (isArrow && selected)
+            ? 1
+            : 0.3;
   }
 
   BorderSide _borderSideColor(BuildContext context) {
@@ -67,25 +74,33 @@ class PaginatorButton extends StatelessWidget {
             : (isArrow
                 ? InheritedNumberPaginator.of(context)
                     .config
-                    .buttonNextAndPrevBorderActiveColor
+                    .buttonNextAndPrevBorderUnActiveColor
                 : InheritedNumberPaginator.of(context)
                     .config
                     .buttonBorderUnSelectedColor));
   }
 
-  Color? _backgroundColor(BuildContext context, bool selected) => selected
-      ? (InheritedNumberPaginator.of(context)
+  Color? _backgroundColor(BuildContext context, bool selected) => isArrow
+      ? InheritedNumberPaginator.of(context)
           .config
-          .buttonSelectedBackgroundColor)
-      : InheritedNumberPaginator.of(context)
-          .config
-          .buttonUnselectedBackgroundColor;
+          .buttonNextAndPrevBackgroundColor
+      : selected
+          ? (InheritedNumberPaginator.of(context)
+              .config
+              .buttonSelectedBackgroundColor)
+          : InheritedNumberPaginator.of(context)
+              .config
+              .buttonUnselectedBackgroundColor;
 
-  Color? _foregroundColor(BuildContext context, bool selected) => selected
-      ? (InheritedNumberPaginator.of(context)
+  Color? _foregroundColor(BuildContext context, bool selected) => isArrow
+      ? InheritedNumberPaginator.of(context)
           .config
-          .buttonSelectedForegroundColor)
-      : InheritedNumberPaginator.of(context)
-          .config
-          .buttonUnselectedForegroundColor;
+          .buttonNextAndPrevForegroundColor
+      : selected
+          ? (InheritedNumberPaginator.of(context)
+              .config
+              .buttonSelectedForegroundColor)
+          : InheritedNumberPaginator.of(context)
+              .config
+              .buttonUnselectedForegroundColor;
 }

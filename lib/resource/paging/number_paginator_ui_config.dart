@@ -20,6 +20,8 @@ class NumberPaginatorUIConfig {
 
   final Color buttonNextAndPrevBorderActiveColor;
   final Color buttonNextAndPrevBorderUnActiveColor;
+  final Color buttonNextAndPrevBackgroundColor;
+  final Color buttonNextAndPrevForegroundColor;
   final Color buttonBorderSelectedColor;
   final Color buttonBorderUnSelectedColor;
   final Color iconUnActiveColor;
@@ -75,5 +77,7 @@ class NumberPaginatorUIConfig {
     required this.buttonBorderUnSelectedColor,
     required this.iconActiveColor,
     required this.iconUnActiveColor,
+    required this.buttonNextAndPrevBackgroundColor,
+    required this.buttonNextAndPrevForegroundColor
   });
 }

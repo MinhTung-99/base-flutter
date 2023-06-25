@@ -70,7 +70,6 @@ class NumberPaginatorState extends State<NumberPaginator> {
       child: SizedBox(
         height: widget.config.height,
         child: Row(
-          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             ..._buildCenterContent(),
           ],
@@ -87,11 +86,9 @@ class NumberPaginatorState extends State<NumberPaginator> {
         )
       else if (widget.config.mode != ContentDisplayMode.hidden)
         Expanded(
-          child: Container(
-            child: PaginatorContent(
-              controllerPage: _controller,
-              currentPage: _controller.currentPage,
-            ),
+          child: PaginatorContent(
+            controllerPage: _controller,
+            currentPage: _controller.currentPage,
           ),
         ),
     ];

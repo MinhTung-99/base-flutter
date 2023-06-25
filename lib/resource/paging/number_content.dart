@@ -44,7 +44,6 @@ class NumberContent extends StatelessWidget {
                   onPressed: controllerPage.currentPage > 0
                       ? controllerPage.prev
                       : null,
-                  icon: Icons.chevron_left,
                 )),
             _buildPageButton(context, 0),
             if (_frontDotsShouldShow(context, availableSpots))
@@ -65,7 +64,6 @@ class NumberContent extends StatelessWidget {
                         InheritedNumberPaginator.of(context).numberPages - 1
                     ? controllerPage.next
                     : null,
-                icon: Icons.chevron_right,
               ),
             ),
           ],

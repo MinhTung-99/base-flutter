@@ -54,12 +54,14 @@ class PagingViewState extends State<PagingWidget> {
       buttonUnselectedForegroundColor: const Color(0xFF3333333),
       buttonUnselectedBackgroundColor: Colors.limeAccent,
       buttonSelectedBackgroundColor: const Color(0xFF037AF9),
-      buttonNextAndPrevBorderActiveColor: Colors.deepOrangeAccent,
+      buttonNextAndPrevBorderActiveColor: Colors.green,
       buttonNextAndPrevBorderUnActiveColor: const Color(0xFFA2A7B5).withOpacity(0.4),
-      buttonBorderSelectedColor: const Color(0xFF037AF9),
+      buttonBorderSelectedColor: Colors.lightGreenAccent,
       buttonBorderUnSelectedColor: const Color(0xFFA2A7B5).withOpacity(0.4),
       iconUnActiveColor: Colors.red,
-      iconActiveColor: Colors.deepPurpleAccent,
+      iconActiveColor: Colors.black,
+      buttonNextAndPrevBackgroundColor: Colors.white,
+      buttonNextAndPrevForegroundColor: Colors.white
     );
   }
 }

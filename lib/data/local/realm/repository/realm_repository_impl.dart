@@ -1,21 +1,23 @@
-import 'package:base_flutter/data/local/realm/realm_table.dart';
-import 'package:injectable/injectable.dart';
+
 import 'package:realm/realm.dart';
 
-@injectable
-class RealmDatabase {
+import '../../../repository/reaml_repository.dart';
+import '../realm_table.dart';
 
+class RealmRepositoryImpl extends RealmRepository {
   final Realm _realm;
 
-  RealmDatabase(this._realm);
+  RealmRepositoryImpl(this._realm);
 
   /// PROFILE
+  @override
   void insertOrUpdateProfile(Profile profile) { // same id then update
     _realm.write(() {
       _realm.add(profile, update: true);
     });
   }
 
+  @override
   List<Profile> getProfiles() {
 
     var profiles = _realm.all<Profile>();
@@ -24,6 +26,5 @@ class RealmDatabase {
     final profileQueryByName = profiles.query(" name == '$name' ").toList();
     return profileQueryByName;
   }
-  ///
-
+///
 }

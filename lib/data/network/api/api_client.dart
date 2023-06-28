@@ -10,5 +10,5 @@ abstract class ApiClient {
 
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
-  @GET("/entries") Future<EntryResponse> getEntries();
+  @GET("/entries") Future<EntryResponse?> getEntries();
 }

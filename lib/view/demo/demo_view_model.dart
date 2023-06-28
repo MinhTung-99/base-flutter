@@ -1,26 +1,24 @@
 import 'package:base_flutter/application/base/view_model/base_view_model.dart';
 import 'package:base_flutter/data/local/shared_preferences/shared_preferences.dart';
-import 'package:base_flutter/data/network/api_service.dart';
 import 'package:base_flutter/data/network/response/entry/entry_response.dart';
+import 'package:base_flutter/data/repository/reaml_repository.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:injectable/injectable.dart';
-
-import '../../application/widgets/drawer_widget.dart';
 import '../../application/widgets/dropdown_widget.dart';
-import '../../data/local/realm/realm_database.dart';
 import '../../data/local/realm/realm_table.dart';
+import '../../data/repository/entry_repositry.dart';
 import '../../resource/dialog/dialog_common.dart';
 
 @injectable
 class DemoViewModel extends BaseViewModel {
-  final ApiService _apiService;
+  final EntryRepository _entryRepository;
   final DialogCommon _dialogCommon;
-  final RealmDatabase _realmDatabase;
+  final RealmRepository _realmRepository;
   final SharedPreference _sharedPreference;
 
-  DemoViewModel(this._apiService, this._dialogCommon, this._realmDatabase, this._sharedPreference);
+  DemoViewModel(this._entryRepository, this._dialogCommon, this._realmRepository, this._sharedPreference);
 
   Rx<EntryResponse?> entryRx = Rx(null);
 
@@ -46,18 +44,18 @@ class DemoViewModel extends BaseViewModel {
     print('sharedPreference====${await _sharedPreference.get(key: 'test', type: '')}');
 
     /// API
-    //getEntry();
+    getEntry();
 
     /// REALM
-    //_demoInsertOrUpdateProfile();
-    //print('profile====${_realmDatabase.getProfiles()[0].hobby?.name}');
+    _demoInsertOrUpdateProfile();
+    print('profile====${_realmRepository.getProfiles()[0].hobby?.name}');
   }
 
   ///
   void _demoInsertOrUpdateProfile() {
     List<Sport> sports = [];
     sports.add(Sport(1, name: 'Table tennis'));
-    _realmDatabase.insertOrUpdateProfile(Profile(1,
+    _realmRepository.insertOrUpdateProfile(Profile(1,
         name: 'name',
         password: '1234',
         hobby: Hobby(1, name: 'Sports'),
@@ -71,7 +69,7 @@ class DemoViewModel extends BaseViewModel {
 
   void getEntry() async {
     showLoading();
-    _apiService.getEntries().then((it) {
+    _entryRepository.getEntries().then((it) {
       hideLoading();
       entryRx.value = it;
     }).catchError((Object onError) {

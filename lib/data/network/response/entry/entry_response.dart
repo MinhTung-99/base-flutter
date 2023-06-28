@@ -1,4 +1,4 @@
-import 'package:base_flutter/data/network/response/base_response.dart';
+import 'package:base_flutter/application/base/response/base_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'entry_response.g.dart';

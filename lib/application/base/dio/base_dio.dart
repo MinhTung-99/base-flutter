@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import '../../../data/local/shared_preferences/shared_preferences.dart';
-import '../../../data/network/dio_curl_interceptor.dart';
+import '../../../data/network/api/dio_curl_interceptor.dart';
 import '../../../injection.dart';
 
 class BaseDio {

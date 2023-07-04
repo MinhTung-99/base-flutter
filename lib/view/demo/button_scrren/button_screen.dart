@@ -1,8 +1,12 @@
+import 'package:base_flutter/application/enum/enums.dart';
 import 'package:base_flutter/application/widgets/dropdown_widget.dart';
 import 'package:base_flutter/application/widgets/paging_widget.dart';
+import 'package:base_flutter/application/widgets/popup_menu_widget.dart';
 import 'package:base_flutter/view/demo/demo_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import '../../../application/widgets/button_widget.dart';
 import '../../../application/widgets/date_picker_widget.dart';
@@ -109,7 +113,10 @@ class ButtonViewState extends State<ButtonScreen> {
             onPageChange: (index) {
 
             },
-          )
+          ),
+          const PopupMenuRowThreeActionsWidget(),
+          _spacing10(),
+          const PopupMenuColumTwoActionsWidget()
         ],
       ),
     );

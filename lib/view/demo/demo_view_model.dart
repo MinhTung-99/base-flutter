@@ -44,7 +44,7 @@ class DemoViewModel extends BaseViewModel {
     print('sharedPreference====${await _sharedPreference.get(key: 'test', type: '')}');
 
     /// API
-    getEntry();
+    //getEntry();
 
     /// REALM
     _demoInsertOrUpdateProfile();

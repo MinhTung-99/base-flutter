@@ -1,14 +1,13 @@
 import 'dart:async';
 
-import 'package:base_flutter/view/demo/demo_screen.dart';
+import 'package:base_flutter/pages/demo/demo_screen.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lifecycle/lifecycle.dart';
-
-import 'application/app_pages.dart';
+import 'pages/app_pages.dart';
 import 'injection.dart';
 
 void mainCommon() {

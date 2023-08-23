@@ -1,4 +1,6 @@
 import 'package:base_flutter/services/repository/realm/reaml_repository.dart';
+import 'package:base_flutter/services/service/realm/realm_service.dart';
+import 'package:base_flutter/services/service/realm/realm_service_impl.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:realm/realm.dart';
@@ -45,5 +47,7 @@ abstract class AppModule {
   /// SERVICES
   @singleton
   EntryService providerEntryService() => EntryServiceImpl();
+
+  RealmService providerRealmService() => RealmServiceImpl();
   ///
 }

@@ -16,12 +16,13 @@ import 'package:realm/realm.dart' as _i9;
 
 import 'helpers/base/view_model/base_view_model.dart' as _i4;
 import 'helpers/dialog/dialog_common.dart' as _i5;
-import 'modules/app_module.dart' as _i12;
+import 'modules/app_module.dart' as _i13;
 import 'services/api/api_client.dart' as _i3;
-import 'services/local/shared_preferences/shared_preferences.dart' as _i11;
+import 'services/local/shared_preferences/shared_preferences.dart' as _i12;
 import 'services/repository/entry/entry_repository.dart' as _i7;
 import 'services/repository/realm/reaml_repository.dart' as _i10;
 import 'services/service/entry/entry_service.dart' as _i8;
+import 'services/service/realm/realm_service.dart' as _i11;
 
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -45,9 +46,10 @@ extension GetItInjectableX on _i1.GetIt {
         appModule.providerLocalConfiguration());
     gh.singleton<_i9.Realm>(appModule.providerRealm);
     gh.singleton<_i10.RealmRepository>(appModule.providerReamRepository());
-    gh.factory<_i11.SharedPreference>(() => _i11.SharedPreference());
+    gh.factory<_i11.RealmService>(() => appModule.providerRealmService());
+    gh.factory<_i12.SharedPreference>(() => _i12.SharedPreference());
     return this;
   }
 }
 
-class _$AppModule extends _i12.AppModule {}
+class _$AppModule extends _i13.AppModule {}

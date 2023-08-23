@@ -1,5 +1,5 @@
 
-import 'package:base_flutter/services/repository/entry/entry_repositry.dart';
+import 'package:base_flutter/services/repository/entry/entry_repository.dart';
 
 import '../../api/api_client.dart';
 import '../../../models/entry.dart';

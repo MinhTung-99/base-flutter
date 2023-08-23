@@ -7,7 +7,7 @@ class DemoBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<DemoViewModel>(
-      () => getIt<DemoViewModel>(),
+      () => DemoViewModel(),
     );
   }
 }

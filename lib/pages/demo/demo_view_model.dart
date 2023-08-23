@@ -1,9 +1,9 @@
+import 'package:base_flutter/injection.dart';
 import 'package:base_flutter/services/repository/realm/reaml_repository.dart';
+import 'package:base_flutter/services/service/entry/entry_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:injectable/injectable.dart';
-import '../../services/repository/entry/entry_repositry.dart';
 import '../../helpers/base/view_model/base_view_model.dart';
 import '../../helpers/dialog/dialog_common.dart';
 import '../../services/local/realm/realm_table.dart';
@@ -11,14 +11,11 @@ import '../../services/local/shared_preferences/shared_preferences.dart';
 import '../../models/entry.dart';
 import '../widgets/dropdown_widget.dart';
 
-@injectable
 class DemoViewModel extends BaseViewModel {
-  final EntryRepository _entryRepository;
-  final DialogCommon _dialogCommon;
-  final RealmRepository _realmRepository;
-  final SharedPreference _sharedPreference;
-
-  DemoViewModel(this._entryRepository, this._dialogCommon, this._realmRepository, this._sharedPreference);
+  final EntryService _entryService = getIt<EntryService>();
+  final DialogCommon _dialogCommon = getIt<DialogCommon>();
+  final RealmRepository _realmRepository = getIt<RealmRepository>();
+  final SharedPreference _sharedPreference = getIt<SharedPreference>();
 
   Rx<Entry?> entryRx = Rx(null);
 
@@ -69,7 +66,7 @@ class DemoViewModel extends BaseViewModel {
 
   void getEntry() async {
     showLoading();
-    _entryRepository.getEntries().then((it) {
+    _entryService.getEntries().then((it) {
       hideLoading();
       entryRx.value = it;
     }).catchError((Object onError) {

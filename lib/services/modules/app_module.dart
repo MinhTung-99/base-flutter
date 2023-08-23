@@ -4,15 +4,16 @@ import 'package:base_flutter/services/service/realm/realm_service_impl.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:realm/realm.dart';
-import '../services/repository/entry/entry_repository.dart';
-import '../helpers/base/dio/base_dio.dart';
-import '../injection.dart';
-import '../services/api/api_client.dart';
-import '../services/local/realm/realm_table.dart';
-import '../services/repository/realm/realm_repository_impl.dart';
-import '../services/repository/entry/entry_repository_impl.dart';
-import '../services/service/entry/entry_service.dart';
-import '../services/service/entry/entry_service_impl.dart';
+
+import '../../helpers/base/dio/base_dio.dart';
+import '../../injection.dart';
+import '../api/api_client.dart';
+import '../local/realm/realm_table.dart';
+import '../repository/entry/entry_repository.dart';
+import '../repository/entry/entry_repository_impl.dart';
+import '../repository/realm/realm_repository_impl.dart';
+import '../service/entry/entry_service.dart';
+import '../service/entry/entry_service_impl.dart';
 
 @module
 abstract class AppModule {

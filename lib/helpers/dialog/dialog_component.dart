@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../config/themes/app_text_styles.dart';
 import '../../pages/widgets/auto_hide_keyboard_widget.dart';
 import '../../pages/widgets/icon_close_widget.dart';
 
@@ -83,7 +82,7 @@ class DialogComponent extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          _titleWidget(),
+          _titleWidget(context),
           _closeWidget(context)
         ],
       ),
@@ -122,14 +121,14 @@ class DialogComponent extends StatelessWidget {
         20, marginToBottomMobile);
   }
 
-  Widget _titleWidget() {
+  Widget _titleWidget(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           title ?? '',
-          style: notoSansJPMedium_colorBack3333_fontSize16,
+          style: Theme.of(context).textTheme.titleLarge,
         )
       ],
     );

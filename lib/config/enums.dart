@@ -6,3 +6,11 @@ enum POPUP_MENU_VALUE {
 
   final String value;
 }
+
+enum FONTS {
+  DEFAULT('FIRST_ITEM');
+
+  const FONTS(this.value);
+
+  final String value;
+}

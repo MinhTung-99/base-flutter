@@ -1,4 +1,5 @@
 
+import 'package:base_flutter/pages/widgets/text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,12 +18,10 @@ class ButtonWidget extends StatelessWidget {
     this.opacity,
     this.widthBorder,
     this.child,
-    this.textStyle,
     Key? key,
   }) : super(key: key);
 
   final String text;
-  final TextStyle? textStyle;
 
   final double? width;
   final double? height;
@@ -58,7 +57,7 @@ class ButtonWidget extends StatelessWidget {
           padding: padding,
           margin: margin,
           decoration: _getDecoration(),
-          child: child ?? _textWidget(),
+          child: child ?? _textWidget(context),
         ),
       ),
     );
@@ -72,14 +71,15 @@ class ButtonWidget extends StatelessWidget {
         boxShadow: boxShadows);
   }
 
-  Widget _textWidget() {
+  Widget _textWidget(BuildContext context) {
     return Align(
       alignment: Alignment.center,
-      child: Text(
-        text,
-        style: textStyle,
-        textAlign: TextAlign.center,
-      ),
+      child: TextWidget(content: text, color: Theme.of(context).colorScheme.background,)
+      // Text(
+      //   text,
+      //   style: textStyle,
+      //   textAlign: TextAlign.center,
+      // ),
     );
   }
 }

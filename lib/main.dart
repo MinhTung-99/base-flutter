@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:base_flutter/pages/demo/demo_screen.dart';
+import 'package:base_flutter/themes/theme_light.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
@@ -55,6 +56,8 @@ class _MyApp extends State<MyApp> {
           return OrientationBuilder(builder: (context, orientation) {
             return Portal(
                 child: GetMaterialApp(
+                    theme: lightTheme,
+                    darkTheme: lightTheme,
                     builder: FlutterSmartDialog.init(),
                     navigatorObservers: [defaultLifecycleObserver],
                     getPages: AppPages.routes,

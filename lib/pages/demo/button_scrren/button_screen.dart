@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../widgets/button_widget.dart';
-import '../../widgets/date_picker_widget.dart';
+import '../../widgets/date_picker_widgets/date_picker_widget.dart';
 import '../../widgets/dropdown_widget.dart';
-import '../../widgets/paging/paging_widget.dart';
-import '../../widgets/poup_menu/popup_menu_widget.dart';
+import '../../widgets/paging_widgets/paging_widget.dart';
+import '../../widgets/poup_menu_widgets/popup_menu_widget.dart';
 import '../demo_view_model.dart';
 
 class ButtonScreen extends StatefulWidget {

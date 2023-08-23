@@ -1,5 +1,4 @@
-
-import 'package:base_flutter/pages/widgets/paging/paginator_content.dart';
+import 'package:base_flutter/pages/widgets/paging_widgets/paginator_content.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'enum_content_display_mode.dart';

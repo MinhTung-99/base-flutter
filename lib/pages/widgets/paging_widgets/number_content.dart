@@ -1,6 +1,6 @@
 import 'dart:math';
-import 'package:base_flutter/pages/widgets/paging/paginator_button.dart';
-import 'package:base_flutter/pages/widgets/paging/paginator_icon_button.dart';
+import 'package:base_flutter/pages/widgets/paging_widgets/paginator_button.dart';
+import 'package:base_flutter/pages/widgets/paging_widgets/paginator_icon_button.dart';
 import 'package:flutter/material.dart';
 
 import 'auto_size_text.dart';

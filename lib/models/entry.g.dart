@@ -1,17 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../../../models/entry_response.dart';
+part of 'entry.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-EntryResponse _$EntryResponseFromJson(Map<String, dynamic> json) =>
-    EntryResponse(
+Entry _$EntryFromJson(Map<String, dynamic> json) => Entry(
       count: json['count'] as int?,
     );
 
-Map<String, dynamic> _$EntryResponseToJson(EntryResponse instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$EntryToJson(Entry instance) => <String, dynamic>{
       'count': instance.count,
     };

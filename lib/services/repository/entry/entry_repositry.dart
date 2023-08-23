@@ -1,5 +1,5 @@
-import '../../../models/entry_response.dart';
+import '../../../models/entry.dart';
 
 abstract class EntryRepository {
-  Future<EntryResponse?> getEntries();
+  Future<Entry?> getEntries();
 }

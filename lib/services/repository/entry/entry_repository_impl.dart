@@ -2,7 +2,7 @@
 import 'package:base_flutter/services/repository/entry/entry_repositry.dart';
 
 import '../../api/api_client.dart';
-import '../../../models/entry_response.dart';
+import '../../../models/entry.dart';
 
 class EntryRepositoryImpl extends EntryRepository {
 
@@ -11,7 +11,7 @@ class EntryRepositoryImpl extends EntryRepository {
   EntryRepositoryImpl(this._apiClient);
 
   @override
-  Future<EntryResponse?> getEntries() async {
+  Future<Entry?> getEntries() async {
     return await _apiClient.getEntries();
   }
 

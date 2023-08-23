@@ -19,13 +19,13 @@ class _ApiClient implements ApiClient {
   String? baseUrl;
 
   @override
-  Future<EntryResponse?> getEntries() async {
+  Future<Entry?> getEntries() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>?>(_setStreamType<EntryResponse>(Options(
+    final _result =
+        await _dio.fetch<Map<String, dynamic>?>(_setStreamType<Entry>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -37,8 +37,7 @@ class _ApiClient implements ApiClient {
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value =
-        _result.data == null ? null : EntryResponse.fromJson(_result.data!);
+    final value = _result.data == null ? null : Entry.fromJson(_result.data!);
     return value;
   }
 

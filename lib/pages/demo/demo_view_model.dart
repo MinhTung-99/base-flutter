@@ -8,7 +8,7 @@ import '../../helpers/base/view_model/base_view_model.dart';
 import '../../helpers/dialog/dialog_common.dart';
 import '../../services/local/realm/realm_table.dart';
 import '../../services/local/shared_preferences/shared_preferences.dart';
-import '../../models/entry_response.dart';
+import '../../models/entry.dart';
 import '../widgets/dropdown_widget.dart';
 
 @injectable
@@ -20,7 +20,7 @@ class DemoViewModel extends BaseViewModel {
 
   DemoViewModel(this._entryRepository, this._dialogCommon, this._realmRepository, this._sharedPreference);
 
-  Rx<EntryResponse?> entryRx = Rx(null);
+  Rx<Entry?> entryRx = Rx(null);
 
   List<DropDownValueModel> items = [];
 
@@ -44,7 +44,7 @@ class DemoViewModel extends BaseViewModel {
     print('sharedPreference====${await _sharedPreference.get(key: 'test', type: '')}');
 
     /// API
-    //getEntry();
+    getEntry();
 
     /// REALM
     _demoInsertOrUpdateProfile();

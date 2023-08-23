@@ -1,15 +1,14 @@
-
-import 'package:base_flutter/data/local/realm/repository/realm_repository_impl.dart';
-import 'package:base_flutter/data/network/repository/entry_repository_impl.dart';
-import 'package:base_flutter/data/repository/reaml_repository.dart';
+import 'package:base_flutter/services/repository/realm/reaml_repository.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:realm/realm.dart';
-import '../data/local/realm/realm_table.dart';
-import '../data/network/api/api_client.dart';
-import '../data/repository/entry_repositry.dart';
+import '../services/repository/entry/entry_repositry.dart';
 import '../helpers/base/dio/base_dio.dart';
 import '../injection.dart';
+import '../services/api/api_client.dart';
+import '../services/local/realm/realm_table.dart';
+import '../services/repository/realm/realm_repository_impl.dart';
+import '../services/repository/entry/entry_repository_impl.dart';
 
 @module
 abstract class AppModule {

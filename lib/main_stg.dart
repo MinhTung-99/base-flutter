@@ -1,4 +1,4 @@
-import 'enviroment.dart';
+import 'config/enviroment.dart';
 import 'injection.dart';
 import 'main.dart';
 

@@ -1,7 +1,8 @@
 
-import 'package:base_flutter/data/network/response/entry/entry_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
+
+import '../../models/entry_response.dart';
 
 part 'api_client.g.dart';
 

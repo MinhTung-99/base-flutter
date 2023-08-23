@@ -1,5 +1,5 @@
 
-import 'package:base_flutter/enviroment.dart';
+import 'package:base_flutter/config/enviroment.dart';
 import 'package:base_flutter/main.dart';
 
 import 'injection.dart';

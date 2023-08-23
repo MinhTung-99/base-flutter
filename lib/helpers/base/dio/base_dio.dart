@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import '../../../data/local/shared_preferences/shared_preferences.dart';
-import '../../../data/network/api/dio_curl_interceptor.dart';
 import '../../../injection.dart';
+import '../../../services/api/dio_curl_interceptor.dart';
+import '../../../services/local/shared_preferences/shared_preferences.dart';
 
 class BaseDio {
   late Dio dio;

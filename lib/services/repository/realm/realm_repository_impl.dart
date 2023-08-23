@@ -1,8 +1,8 @@
 
 import 'package:realm/realm.dart';
 
-import '../../../repository/reaml_repository.dart';
-import '../realm_table.dart';
+import 'reaml_repository.dart';
+import '../../local/realm/realm_table.dart';
 
 class RealmRepositoryImpl extends RealmRepository {
   final Realm _realm;

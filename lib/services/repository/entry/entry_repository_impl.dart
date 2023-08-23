@@ -1,8 +1,8 @@
 
-import 'package:base_flutter/data/network/response/entry/entry_response.dart';
-import 'package:base_flutter/data/repository/entry_repositry.dart';
+import 'package:base_flutter/services/repository/entry/entry_repositry.dart';
 
-import '../api/api_client.dart';
+import '../../api/api_client.dart';
+import '../../../models/entry_response.dart';
 
 class EntryRepositoryImpl extends EntryRepository {
 

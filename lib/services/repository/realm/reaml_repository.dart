@@ -1,5 +1,4 @@
-
-import '../local/realm/realm_table.dart';
+import '../../local/realm/realm_table.dart';
 
 abstract class RealmRepository {
   void insertOrUpdateProfile(Profile profile);

@@ -1,14 +1,14 @@
-import 'package:base_flutter/data/local/shared_preferences/shared_preferences.dart';
-import 'package:base_flutter/data/network/response/entry/entry_response.dart';
-import 'package:base_flutter/data/repository/reaml_repository.dart';
+import 'package:base_flutter/services/repository/realm/reaml_repository.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:injectable/injectable.dart';
-import '../../data/local/realm/realm_table.dart';
-import '../../data/repository/entry_repositry.dart';
+import '../../services/repository/entry/entry_repositry.dart';
 import '../../helpers/base/view_model/base_view_model.dart';
 import '../../helpers/dialog/dialog_common.dart';
+import '../../services/local/realm/realm_table.dart';
+import '../../services/local/shared_preferences/shared_preferences.dart';
+import '../../models/entry_response.dart';
 import '../widgets/dropdown_widget.dart';
 
 @injectable

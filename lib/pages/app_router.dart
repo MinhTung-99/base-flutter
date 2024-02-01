@@ -15,7 +15,6 @@ class AppRouter {
     }
     return GetPageRoute(
         page: route.page,
-        binding: route.binding,
         settings: settings,
         routeName: route.name);
   }

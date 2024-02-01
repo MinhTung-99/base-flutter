@@ -1,10 +1,11 @@
 import 'package:base_flutter/helpers/base/ui/base_stateful_view.dart';
 import 'package:base_flutter/pages/main_tab_bar/bottom_tab_bar_view_model.dart';
+import 'package:base_flutter/pages/widgets/app_bar/app_bar_widget.dart';
 import 'package:base_flutter/pages/widgets/tabBar/bottom_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:lifecycle/lifecycle.dart';
 
-import '../demo/button_scrren/first_view.dart';
+import '../demo/first_view/first_view.dart';
 
 class BottomTabBarView extends StatefulWidget {
   static const route = "/MainTabBarView";
@@ -75,6 +76,11 @@ class BottomTabBarViewState
         children: tabs.map((e) => e.page).toList(),
       ),
     );
+  }
+
+  @override
+  PreferredSizeWidget? buildAppBar(BuildContext context) {
+    return AppBarWidget(context: context, title: "BASE FLUTTER",);
   }
 
   @override

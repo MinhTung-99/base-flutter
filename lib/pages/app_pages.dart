@@ -1,6 +1,7 @@
-import 'package:base_flutter/pages/demo/button_scrren/first_view.dart';
 import 'package:base_flutter/pages/main_tab_bar/bottom_tab_bar_view.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
+
+import 'demo/first_view/first_view.dart';
 
 class AppPages {
   AppPages._();

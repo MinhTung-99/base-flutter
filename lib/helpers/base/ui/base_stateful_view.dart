@@ -17,8 +17,6 @@ abstract class BaseStateOfView<Page extends StatefulWidget,
   @override
   void onLifecycleEvent(LifecycleEvent event) {}
 
-  ViewModel get viewModel => createViewModel();
-
   @mustCallSuper
   void _initViewState() {
     WidgetsBinding.instance.addObserver(this);
@@ -29,7 +27,6 @@ abstract class BaseStateOfView<Page extends StatefulWidget,
   }
 
   @override
-  @mustCallSuper
   void didChangeDependencies() {
     didChangeViewDependencies();
     super.didChangeDependencies();
@@ -67,8 +64,12 @@ abstract class BaseStateOfView<Page extends StatefulWidget,
 
   void onDetached() {}
 
+  late ViewModel viewModel;
+
   @override
   void initState() {
+    viewModel = createViewModel();
+    viewModel.onInit();
     WidgetsBinding.instance.addObserver(this);
     _initViewState();
     super.initState();
@@ -85,6 +86,7 @@ abstract class BaseStateOfView<Page extends StatefulWidget,
 
   @override
   void dispose() {
+    viewModel.dispose();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }

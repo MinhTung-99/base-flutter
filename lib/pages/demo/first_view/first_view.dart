@@ -1,6 +1,7 @@
 import 'package:base_flutter/helpers/base/ui/base_stateful_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import '../../widgets/button_widget.dart';
 import '../../widgets/date_picker_widgets/date_picker_widget.dart';
 import '../../widgets/dropdown_widget.dart';
@@ -111,9 +112,8 @@ class FirstViewState extends BaseStateOfView<FirstView, FirstViewModel> {
 
             },
           ),
-          const PopupMenuRowThreeActionsWidget(),
           _spacing10(),
-          const PopupMenuColumTwoActionsWidget()
+          Obx(() => PopupMenuColumWidget(menuItems: viewModel.menuItems.value,))
         ],
       ),
     );

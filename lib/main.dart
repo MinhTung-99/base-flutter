@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import 'package:base_flutter/pages/demo/demo_screen.dart';
+import 'package:base_flutter/pages/app_router.dart';
+import 'package:base_flutter/pages/main_tab_bar/bottom_tab_bar_view.dart';
 import 'package:base_flutter/themes/theme_light.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,6 @@ import 'package:flutter_portal/flutter_portal.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lifecycle/lifecycle.dart';
-import 'pages/app_pages.dart';
 import 'injection.dart';
 
 void mainCommon() {
@@ -29,6 +29,7 @@ class MyApp extends StatefulWidget {
 class _MyApp extends State<MyApp> {
   late final StreamSubscription<ConnectivityResult>? networkSubscription;
   late Future<ConnectivityResult> _connection;
+  final _router = AppRouter();
 
   @override
   void initState() {
@@ -60,8 +61,9 @@ class _MyApp extends State<MyApp> {
                     darkTheme: lightTheme,
                     builder: FlutterSmartDialog.init(),
                     navigatorObservers: [defaultLifecycleObserver],
-                    getPages: AppPages.routes,
-                    initialRoute: DemoScreen.router));
+                    onGenerateRoute: _router.route,
+                    //getPages: AppPages.routes,
+                    initialRoute: BottomTabBarView.route));
           });
         } else {
           return Container(

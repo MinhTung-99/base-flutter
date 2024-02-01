@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:lifecycle/lifecycle.dart';
 import '../view_model/base_view_model.dart';
 
-abstract class BaseStateFulView<Page extends StatefulWidget,
+abstract class BaseStateOfView<Page extends StatefulWidget,
         ViewModel extends BaseViewModel>
     extends State<Page>
     with
@@ -17,7 +17,7 @@ abstract class BaseStateFulView<Page extends StatefulWidget,
   @override
   void onLifecycleEvent(LifecycleEvent event) {}
 
-  ViewModel get viewModel => GetInstance().find<ViewModel>();
+  ViewModel get viewModel => createViewModel();
 
   @mustCallSuper
   void _initViewState() {
@@ -68,7 +68,6 @@ abstract class BaseStateFulView<Page extends StatefulWidget,
   void onDetached() {}
 
   @override
-  @nonVirtual
   void initState() {
     WidgetsBinding.instance.addObserver(this);
     _initViewState();
@@ -85,9 +84,11 @@ abstract class BaseStateFulView<Page extends StatefulWidget,
   }
 
   @override
-  @mustCallSuper
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
+
+  @mustCallSuper
+  ViewModel createViewModel();
 }

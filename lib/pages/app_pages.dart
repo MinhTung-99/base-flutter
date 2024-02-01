@@ -1,17 +1,18 @@
-
+import 'package:base_flutter/pages/demo/button_scrren/first_view.dart';
+import 'package:base_flutter/pages/main_tab_bar/bottom_tab_bar_view.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
-
-import 'demo/demo_binding.dart';
-import 'demo/demo_screen.dart';
 
 class AppPages {
   AppPages._();
 
   static final routes = [
     GetPage(
-      name: DemoScreen.router,
-      page: () => const DemoScreen(),
-      binding: DemoBinding()
-      ),
+      name: BottomTabBarView.route,
+      page: () => const BottomTabBarView(),
+    ),
+    GetPage(
+      name: FirstView.route,
+      page: () => const FirstView(),
+    ),
   ];
 }

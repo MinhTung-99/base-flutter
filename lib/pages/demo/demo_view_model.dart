@@ -1,13 +1,10 @@
 import 'package:base_flutter/injection.dart';
-import 'package:base_flutter/services/repository/realm/reaml_repository.dart';
 import 'package:base_flutter/services/service/entry/entry_service.dart';
-import 'package:base_flutter/services/service/realm/realm_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../../helpers/base/view_model/base_view_model.dart';
 import '../../helpers/dialog/dialog_common.dart';
-import '../../services/local/realm/realm_table.dart';
 import '../../services/local/shared_preferences/shared_preferences.dart';
 import '../../models/entry.dart';
 import '../widgets/dropdown_widget.dart';
@@ -15,10 +12,10 @@ import '../widgets/dropdown_widget.dart';
 class DemoViewModel extends BaseViewModel {
   final EntryService _entryService = getIt<EntryService>();
   final DialogCommon _dialogCommon = getIt<DialogCommon>();
-  final RealmService _realmService = getIt<RealmService>();
   final SharedPreference _sharedPreference = getIt<SharedPreference>();
 
   Rx<Entry?> entryRx = Rx(null);
+  final indexTab = 0.obs;
 
   List<DropDownValueModel> items = [];
 
@@ -43,21 +40,6 @@ class DemoViewModel extends BaseViewModel {
 
     /// API
     getEntry();
-
-    /// REALM
-    _demoInsertOrUpdateProfile();
-    print('profile====${_realmService.getProfiles()[0].hobby?.name}');
-  }
-
-  ///
-  void _demoInsertOrUpdateProfile() {
-    List<Sport> sports = [];
-    sports.add(Sport(1, name: 'Table tennis'));
-    _realmService.insertOrUpdateProfile(Profile(1,
-        name: 'name',
-        password: '1234',
-        hobby: Hobby(1, name: 'Sports'),
-        sports: sports));
   }
 
   ///

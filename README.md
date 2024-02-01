@@ -2,11 +2,8 @@
     - flutter run -t lib/main_dev.dart --flavor dev
 
 # add injectable
-    - flutter packages pub run build_runner build
-    - flutter packages pub run build_runner build --delete-conflicting-outputs (run when Conflicting)
-
-# realm
-    - flutter pub run realm generate
+    - dart packages pub run build_runner build
+    - dart packages pub run build_runner build --delete-conflicting-outputs (run when Conflicting)
 
 # flavor
 - # IOS
@@ -35,5 +32,8 @@
       - PROD: flutter build appbundle --no-sound-null-safety --release --no-tree-shake-icons -t lib/main_prod.dart --flavor prod -> aab
 
 # GIT IGNORE
-      - git rm -r --cached file
-      - add path file to .gitignore
+      - git rm --cache -r lib/l10n/app_localizations**
+      - git rm --cache -r .flutter-plugins
+      - git rm --cache -r .idea/   
+      - git rm --cache -f  .flutter-plugins-dependencies
+      - git rm --cache -r .dart_tool/  

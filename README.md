@@ -2,8 +2,9 @@
     - flutter run -t lib/main_dev.dart --flavor dev
 
 # add injectable
-    - dart packages pub run build_runner build
-    - dart packages pub run build_runner build --delete-conflicting-outputs (run when Conflicting)
+    - dart pub upgrade (run if can)
+    - dart run build_runner build
+    - dart run build_runner build --delete-conflicting-outputs (run when Conflicting)
 
 # flavor
 - # IOS

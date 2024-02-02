@@ -34,7 +34,7 @@ extension GetItInjectableX on _i1.GetIt {
     final appModule = _$AppModule();
     gh.singleton<_i3.ApiClient>(appModule.providerApiClient);
     gh.factory<_i4.BaseViewModel>(() => _i4.BaseViewModel());
-    gh.factory<_i5.DialogCommon>(() => _i5.DialogCommon());
+    gh.lazySingleton<_i5.DialogCommon>(() => appModule.providerDialogCommon);
     gh.singleton<_i6.Dio>(appModule.providerDio);
     gh.singleton<_i7.EntryRepository>(appModule.providerEntryRepository());
     gh.singleton<_i8.EntryService>(appModule.providerEntryService());

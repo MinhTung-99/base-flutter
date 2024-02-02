@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class DatePickerTheme with DiagnosticableTreeMixin {
+class MyDatePickerTheme with DiagnosticableTreeMixin {
   final TextStyle cancelStyle;
   final TextStyle doneStyle;
   final TextStyle itemStyle;
@@ -12,7 +12,7 @@ class DatePickerTheme with DiagnosticableTreeMixin {
   final double titleHeight;
   final double itemHeight;
 
-  const DatePickerTheme({
+  const MyDatePickerTheme({
     this.cancelStyle = const TextStyle(color: Colors.red, fontSize: 16),
     this.doneStyle = const TextStyle(color: Colors.blue, fontSize: 16),
     this.itemStyle = const TextStyle(color: Color(0xFF000046), fontSize: 18),

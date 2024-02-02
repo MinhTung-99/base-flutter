@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../helpers/base/dio/base_dio.dart';
+import '../../helpers/dialog/dialog_common.dart';
 import '../../injection.dart';
 import '../api/api_client.dart';
 import '../repository/entry/entry_repository.dart';
@@ -11,6 +12,10 @@ import '../service/entry/entry_service_impl.dart';
 
 @module
 abstract class AppModule {
+
+  ///DIALOG
+  @lazySingleton
+  DialogCommon get providerDialogCommon => DialogCommon();
 
   ///DIO
   @singleton

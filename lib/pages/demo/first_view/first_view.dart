@@ -1,4 +1,6 @@
 import 'package:base_flutter/helpers/base/ui/base_stateful_view.dart';
+import 'package:base_flutter/helpers/dialog/dialog_common.dart';
+import 'package:base_flutter/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -54,16 +56,13 @@ class FirstViewState extends BaseStateOfView<FirstView, FirstViewModel> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        //  _spacing10(),
-          // ButtonWidget(
-          //     width: 100,
-          //     height: 50,
-          //     radius: 0,
-          //     colorBackground: Colors.blue,
-          //     text: 'OPEN DIALOG',
-          //     onTab: () {
-          //       viewModel.showAlertDialog(context);
-          //     }),
+          ButtonTextWidget(
+              title: 'OPEN DIALOG',
+              onPressed: () {
+                //getIt<DialogCommon>().showAlertDialog(context: context, title: "TEST");
+                getIt<DialogCommon>().a = 100;
+                print('ssss==${getIt<DialogCommon>().a}');
+              }),
           _spacing10(),
           const DatePickerWidget(),
           _spacing10(),

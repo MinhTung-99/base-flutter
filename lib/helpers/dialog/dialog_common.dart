@@ -1,11 +1,11 @@
 import 'package:base_flutter/pages/widgets/button_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:injectable/injectable.dart';
 import 'dialog_component.dart';
 
-@injectable
 class DialogCommon {
+
+  int a = 0;
 
   Future<void> showAlertDialog({
     required BuildContext context,

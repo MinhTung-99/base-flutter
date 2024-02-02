@@ -1,8 +1,8 @@
+import 'package:base_flutter/pages/widgets/button_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:injectable/injectable.dart';
 import 'dialog_component.dart';
-import '../../pages/widgets/button_widget.dart';
 
 @injectable
 class DialogCommon {
@@ -70,15 +70,9 @@ class DialogCommon {
 
   ///
   Widget _buttonWidget({required BuildContext context, required String text, required Function()? onTab}) {
-    return ButtonWidget(
-        width: _getWith(context),
-        height: 52,
-        radius: 26,
-        colorBackground:Colors.white,
-        colorBorder: const Color(0xFF007AFF),
-        text: text,
-        widthBorder: 0.7,
-        onTab: () {
+    return ButtonTextWidget(
+        title: text,
+        onPressed: () {
           Get.back();
           onTab?.call();
         });

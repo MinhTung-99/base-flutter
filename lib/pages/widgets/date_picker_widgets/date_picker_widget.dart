@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
+import '../button_text_widget.dart';
 import 'date_local.dart';
-import '../button_widget.dart';
 import 'date_picker_language.dart';
 
 class DatePickerWidget extends StatelessWidget {
@@ -10,13 +10,9 @@ class DatePickerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ButtonWidget(
-        width: 150,
-        height: 50,
-        radius: 0,
-        colorBackground: Colors.blue,
-        text: 'OPEN DATE PICKER',
-        onTab: () {
+    return ButtonTextWidget(
+        title: 'OPEN DATE PICKER',
+        onPressed: () {
           _showDatePicker(context);
         }
     );

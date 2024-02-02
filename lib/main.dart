@@ -57,6 +57,7 @@ class _MyApp extends State<MyApp> {
           return OrientationBuilder(builder: (context, orientation) {
             return Portal(
                 child: GetMaterialApp(
+                    debugShowCheckedModeBanner: false,
                     theme: lightTheme,
                     darkTheme: lightTheme,
                     builder: FlutterSmartDialog.init(),

@@ -2,7 +2,7 @@ import 'package:base_flutter/helpers/base/ui/base_stateful_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import '../../widgets/button_widget.dart';
+import '../../widgets/button_text_widget.dart';
 import '../../widgets/date_picker_widgets/date_picker_widget.dart';
 import '../../widgets/dropdown_widget.dart';
 import '../../widgets/paging_widgets/paging_widget.dart';
@@ -67,33 +67,21 @@ class FirstViewState extends BaseStateOfView<FirstView, FirstViewModel> {
           _spacing10(),
           const DatePickerWidget(),
           _spacing10(),
-          ButtonWidget(
-              width: 200,
-              height: 50,
-              radius: 0,
-              colorBackground: Colors.blue,
-              text: 'OPEN BROWSER NATIVE CODE',
-              onTab: () {
+          ButtonTextWidget(
+              title: 'OPEN BROWSER NATIVE CODE',
+              onPressed: () {
                 _methodChannel.invokeMethod('openBrowser');
               }),
           _spacing10(),
-          ButtonWidget(
-              width: 200,
-              height: 50,
-              radius: 0,
-              colorBackground: Colors.blue,
-              text: 'EVENT CHANNEL',
-              onTab: () {
+          ButtonTextWidget(
+              title: 'EVENT CHANNEL',
+              onPressed: () {
                 callEventChannel();
               }),
           _spacing10(),
-          ButtonWidget(
-              width: 200,
-              height: 50,
-              radius: 0,
-              colorBackground: Colors.blue,
-              text: 'SECOND EVENT CHANNEL',
-              onTab: () {
+          ButtonTextWidget(
+              title: 'SECOND EVENT CHANNEL',
+              onPressed: () {
                 callSecondEventChannel();
               }),
           _spacing10(),

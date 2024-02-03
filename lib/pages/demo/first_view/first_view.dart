@@ -59,9 +59,7 @@ class FirstViewState extends BaseStateOfView<FirstView, FirstViewModel> {
           ButtonTextWidget(
               title: 'OPEN DIALOG',
               onPressed: () {
-                //getIt<DialogCommon>().showAlertDialog(context: context, title: "TEST");
-                getIt<DialogCommon>().a = 100;
-                print('ssss==${getIt<DialogCommon>().a}');
+                getIt<DialogCommon>().showAlertDialog(context: context, title: "TEST");
               }),
           _spacing10(),
           const DatePickerWidget(),
@@ -84,14 +82,14 @@ class FirstViewState extends BaseStateOfView<FirstView, FirstViewModel> {
                 callSecondEventChannel();
               }),
           _spacing10(),
-          // DropDownWidget(
-          //   hintText: 'NOTHING',
-          //   padding: const EdgeInsets.symmetric(horizontal: 10),
-          //   dropDownList: viewModel.items,
-          //   singleController: SingleValueDropDownController(
-          //       data:
-          //       const DropDownValueModel(name: 'ABCCCC', value: 'ABCCBCC')),
-          // ),
+          DropDownWidget(
+            hintText: 'NOTHING',
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            dropDownList: viewModel.dropdownItems,
+            singleController: SingleValueDropDownController(
+                data:
+                const DropDownValueModel(name: 'dropdown1', value: 'dropdown1')),
+          ),
           PagingWidget(
             currentPage: 1,
             numberOfPages: 6,

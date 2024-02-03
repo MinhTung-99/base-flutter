@@ -15,6 +15,12 @@ abstract class BasePickerModel {
   //a getter method for right column data, return null to end list
   String? rightStringAtIndex(int index);
 
+  int lengthRight();
+
+  int lengthMiddle();
+
+  int lengthLeft();
+
   //set selected left index
   void setLeftIndex(int index);
 
@@ -123,6 +129,21 @@ class CommonPickerModel extends BasePickerModel {
   @override
   DateTime? finalTime() {
     return null;
+  }
+
+  @override
+  int lengthRight() {
+    return rightList.length;
+  }
+
+  @override
+  int lengthLeft() {
+    return leftList.length;
+  }
+
+  @override
+  int lengthMiddle() {
+    return middleList.length;
   }
 }
 

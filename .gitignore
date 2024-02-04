@@ -48,3 +48,4 @@ build/app/intermediates/incremental/packageDevDebug/tmp/devDebug/zip-cache/andro
 build/ios/Debug-dev-iphonesimulator/App.framework/_CodeSignature/CodeResources
 build/ios/Debug-dev-iphonesimulator/App.framework/App
 build/ios/Debug-dev-iphonesimulator/connectivity_plus/connectivity_plus.framework.dSYM/Contents/Resources/DWARF/connectivity_plus
+*.so

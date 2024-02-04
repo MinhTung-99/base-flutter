@@ -1,4 +1,5 @@
 import 'package:base_flutter/pages/main_tab_bar/bottom_tab_bar_view.dart';
+import 'package:base_flutter/pages/syncfusion_flutter_charts/syncfusion_flutter_charts_view.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import 'demo/first_view/first_view.dart';
@@ -14,6 +15,10 @@ class AppPages {
     GetPage(
       name: FirstView.route,
       page: () => const FirstView(),
+    ),
+    GetPage(
+      name: SyncfusionFlutterChartsView.route,
+      page: () => const SyncfusionFlutterChartsView(),
     ),
   ];
 }

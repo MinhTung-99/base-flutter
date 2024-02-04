@@ -1,6 +1,7 @@
 import 'package:base_flutter/helpers/base/ui/base_stateful_view.dart';
 import 'package:base_flutter/helpers/dialog/dialog_common.dart';
 import 'package:base_flutter/injection.dart';
+import 'package:base_flutter/pages/syncfusion_flutter_charts/syncfusion_flutter_charts_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -98,7 +99,13 @@ class FirstViewState extends BaseStateOfView<FirstView, FirstViewModel> {
             },
           ),
           _spacing10(),
-          Obx(() => PopupMenuColumWidget(menuItems: viewModel.menuItems.value,))
+          Obx(() => PopupMenuColumWidget(menuItems: viewModel.menuItems.value,)),
+          _spacing10(),
+          ButtonTextWidget(
+              title: 'syncfusion flutter charts',
+              onPressed: () {
+                Get.toNamed(SyncfusionFlutterChartsView.route);
+              }),
         ],
       ),
     );

@@ -38,3 +38,7 @@
       - git rm --cache -r .idea/   
       - git rm --cache -f  .flutter-plugins-dependencies
       - git rm --cache -r .dart_tool/  
+
+# Flutter Terminal
+      - open .zshrc
+      - export PATH="$PATH:/Users/tung/Documents/flutter_3.16.9/bin"

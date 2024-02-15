@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class SyncFusionFlutterChartsWidget extends StatelessWidget {
@@ -20,7 +19,7 @@ class SyncFusionFlutterChartsWidget extends StatelessWidget {
         margin: const EdgeInsets.only(top: 0, left: 0, right: 0, bottom: 0),
         plotAreaBorderWidth: 0,
         onDataLabelRender: (dataLabelArgs) {
-          print('$dataLabelArgs  data');
+         // print('$dataLabelArgs  data');
         },
 
         primaryXAxis: const NumericAxis(
@@ -84,8 +83,6 @@ class SyncFusionFlutterChartsWidget extends StatelessWidget {
             dataSource: [
               DataTest(1, 100),
               DataTest(15, 700),
-              // DataTest(20, 300),
-              // DataTest(10, 20)
             ],
             animationDuration: 0,
             width: 2,
@@ -93,7 +90,7 @@ class SyncFusionFlutterChartsWidget extends StatelessWidget {
             yAxisName: 'yAxis',
             isVisibleInLegend: false,
             onPointTap: (pointInteractionDetails) {
-              print('Click vào point');
+              //print('Click vào point');
             },
             color: Colors.red,
             markerSettings: const MarkerSettings(
@@ -108,49 +105,6 @@ class SyncFusionFlutterChartsWidget extends StatelessWidget {
             yValueMapper: (DataTest sales, _) => sales.typeGrowth, //weight
           ),
         ]);
-  }
-
-  List<DataTest> getListHeighOrWeight() {
-    List<DataTest> list = [];
-
-    //if (viewModel.typeAge.value == GrowAgeType.less6years) {
-    _getHeightOrWeight(Rx(["10", "20"]), list);
-    // } else if (viewModel.typeAge.value == GrowAgeType.less12years) {
-    //   _getHeightOrWeight(viewModel.growthSummariesLess12years, list,
-    //       GrowAgeType.less12years, typeGrowthGraph);
-    // } else {
-    //   _getHeightOrWeight(viewModel.growthSummariesLess18years, list,
-    //       GrowAgeType.less18years, typeGrowthGraph);
-    // }
-
-    return list;
-  }
-
-  void _getHeightOrWeight(
-    Rx<List<String>?> listGrowth,
-    List<DataTest> list,
-    /*GrowAgeType type, TypeGrowthGraph typeGrowthGraph*/
-  ) {
-    listGrowth.value
-        ?.map((data) {
-          final height = double.parse("100");
-          final weight = double.parse("200");
-          //final years = /*data.ageMonth.toString().split('/')*/ 20;
-          //final months = years[1].split('/');
-          var month = (20 -
-              // (type == GrowAgeType.less6years
-              //     ? 0
-              //     : type == GrowAgeType.less12years
-              //     ? 6
-              //     : 12)) *
-              // 12.0) +
-              double.parse("18"));
-
-          return DataTest(month, height);
-        })
-        .toList()
-        .forEach((element) => list.addIf(element.typeGrowth > 0,
-            element)); //chi them khi (height|| weight)> 0
   }
 }
 

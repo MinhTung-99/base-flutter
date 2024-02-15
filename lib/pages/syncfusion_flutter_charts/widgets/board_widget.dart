@@ -64,21 +64,6 @@ class BoardWidget extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              // SizedBox(
-                              //   width: index > 1
-                              //       ? index > 8 //so co 2 c/so
-                              //           ? index == 10 // month= 11
-                              //               ? 18.9
-                              //               : index == 11 //month=12
-                              //                   ? 0
-                              //                   : 9.5 //month=10
-                              //           : index > 4
-                              //               ? index == 8 //month=9
-                              //                   ? 17
-                              //                   : 18.5
-                              //               : 18 //month= 3,4,5,6,7,8
-                              //       : 18.4, //month = 1,2
-                              // ),
                             ],
                           );
                         },

@@ -16,21 +16,26 @@ class PopupMenuComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Listener(
-      onPointerDown: (_) async {
-        if (FocusScope.of(context).hasFocus) {
-          FocusScope.of(context).unfocus();
-          await Future.delayed(const Duration(milliseconds: 500));
-        }
-      },
-      child: PopupMenuButton<String>(
-        color: Colors.transparent,
-        padding: EdgeInsets.zero,
-        elevation: elevation ?? 0,
-        offset: offset ?? const Offset(0, 40),
-        itemBuilder: (BuildContext context) => menuItem,
-        child: child,
-      ),
-    );
+    return Theme(
+        data: Theme.of(context).copyWith(
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
+        ),
+        child: Listener(
+          onPointerDown: (_) async {
+            if (FocusScope.of(context).hasFocus) {
+              FocusScope.of(context).unfocus();
+              await Future.delayed(const Duration(milliseconds: 500));
+            }
+          },
+          child: PopupMenuButton<String>(
+            color: Colors.transparent,
+            padding: EdgeInsets.zero,
+            elevation: elevation ?? 0,
+            offset: offset ?? const Offset(0, 40),
+            itemBuilder: (BuildContext context) => menuItem,
+            child: child,
+          ),
+        ));
   }
 }

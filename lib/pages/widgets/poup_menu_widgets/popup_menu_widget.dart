@@ -1,5 +1,6 @@
+import 'package:base_flutter/pages/widgets/button_text_widget.dart';
+import 'package:base_flutter/pages/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'popup_menu_component.dart';
 
@@ -58,11 +59,7 @@ class PopupMenuColumWidget extends StatelessWidget {
   }
 
   Widget _childPopupMenuWidget() {
-    return Container(
-      color: Colors.blueAccent,
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      child: const Text('POUP MENU COLUM'),
-    );
+    return const ButtonTextWidget(title: "POUP MENU COLUM");
   }
 }
 
@@ -82,10 +79,7 @@ Widget _itemMenuWidget(
       decoration: const BoxDecoration(
           color: Colors.yellow,
           border: Border(bottom: BorderSide(width: 1, color: Colors.black))),
-      child: Text(title,
-          style: const TextStyle(
-            color: Colors.black,
-          )),
+      child: TextWidget(text: title,),
     ),
   );
 }

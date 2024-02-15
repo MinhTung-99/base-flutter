@@ -2,9 +2,11 @@ import 'package:base_flutter/helpers/base/ui/base_stateful_view.dart';
 import 'package:base_flutter/helpers/dialog/dialog_common.dart';
 import 'package:base_flutter/injection.dart';
 import 'package:base_flutter/pages/syncfusion_flutter_charts/syncfusion_flutter_charts_view.dart';
+import 'package:base_flutter/themes/theme_blue.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import '../../../themes/theme_red.dart';
 import '../../widgets/button_text_widget.dart';
 import '../../widgets/date_picker_widgets/date_picker_widget.dart';
 import '../../widgets/dropdown_widget.dart';
@@ -22,6 +24,7 @@ class FirstView extends StatefulWidget {
 }
 
 class FirstViewState extends BaseStateOfView<FirstView, FirstViewModel> {
+  bool _isBlueTheme = true;
   final _methodChannel = const MethodChannel('METHOD_CHANNEL');
 
   final _eventChannel = const EventChannel('EVENT_CHANNEL');
@@ -105,6 +108,17 @@ class FirstViewState extends BaseStateOfView<FirstView, FirstViewModel> {
               title: 'syncfusion flutter charts',
               onPressed: () {
                 Get.toNamed(SyncfusionFlutterChartsView.route);
+              }),
+          ButtonTextWidget(
+              title: 'Change theme',
+              onPressed: () {
+                if (_isBlueTheme) {
+                  Get.changeTheme(redTheme);
+                  _isBlueTheme = false;
+                } else {
+                  Get.changeTheme(blueTheme);
+                  _isBlueTheme = true;
+                }
               }),
         ],
       ),

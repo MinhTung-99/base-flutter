@@ -1,31 +1,17 @@
-
 import 'package:base_flutter/config/enums.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class TextWidget extends StatelessWidget{
+class TextWidget extends StatelessWidget {
+  const TextWidget({super.key, required this.text});
 
-  const TextWidget(
-      {super.key,
-        this.color,
-        this.fontSize,
-        required this.content,
-        this.fonts,
-        this.textAlign});
-
-  final String content;
-  final double? fontSize;
-  final Color? color;
-  final TextAlign? textAlign;
-  final FONTS? fonts;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      textAlign: textAlign ?? TextAlign.start,
-      content,
-      style:
-      TextStyle(fontSize: fontSize, color: color, fontFamily: fonts?.value),
+      text,
+      style: Theme.of(context).textTheme.titleMedium
     );
   }
-
 }

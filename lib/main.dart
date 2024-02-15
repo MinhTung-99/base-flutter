@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:base_flutter/pages/app_router.dart';
 import 'package:base_flutter/pages/main_tab_bar/bottom_tab_bar_view.dart';
-import 'package:base_flutter/themes/theme_light.dart';
+import 'package:base_flutter/themes/theme_blue.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
@@ -58,12 +58,11 @@ class _MyApp extends State<MyApp> {
             return Portal(
                 child: GetMaterialApp(
                     debugShowCheckedModeBanner: false,
-                    theme: lightTheme,
-                    darkTheme: lightTheme,
+                    theme: blueTheme,
+                    darkTheme: blueTheme,
                     builder: FlutterSmartDialog.init(),
                     navigatorObservers: [defaultLifecycleObserver],
                     onGenerateRoute: _router.route,
-                    //getPages: AppPages.routes,
                     initialRoute: BottomTabBarView.route));
           });
         } else {

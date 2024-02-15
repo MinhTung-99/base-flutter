@@ -76,8 +76,8 @@ class SyncFusionFlutterChartsWidget extends StatelessWidget {
             ),
             color: Colors.brown,
 
-            xValueMapper: (DataTest sales, _) => sales.month,
-            yValueMapper: (DataTest sales, _) => sales.typeGrowth, //height
+            xValueMapper: (DataTest sales, _) => sales.xValueMapper,
+            yValueMapper: (DataTest sales, _) => sales.yValueMapper, //height
           ),
           LineSeries<DataTest, double>(
             dataSource: [
@@ -101,16 +101,16 @@ class SyncFusionFlutterChartsWidget extends StatelessWidget {
               color: Colors.deepPurpleAccent,
               isVisible: true, // Hiển thị marker
             ),
-            xValueMapper: (DataTest sales, _) => sales.month,
-            yValueMapper: (DataTest sales, _) => sales.typeGrowth, //weight
+            xValueMapper: (DataTest sales, _) => sales.xValueMapper,
+            yValueMapper: (DataTest sales, _) => sales.yValueMapper, //weight
           ),
         ]);
   }
 }
 
 class DataTest {
-  DataTest(this.month, this.typeGrowth);
+  DataTest(this.xValueMapper, this.yValueMapper);
 
-  final double month;
-  final double typeGrowth; //height or weight
+  final double xValueMapper;
+  final double yValueMapper; //height or weight
 }

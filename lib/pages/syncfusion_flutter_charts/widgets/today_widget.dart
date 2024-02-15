@@ -9,9 +9,9 @@ class ToDayWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var month = 4;
+    var xValueMapper = 4;
     return Positioned(
-      left: itemWidth * (month - 1),
+      left: itemWidth * (xValueMapper - 1),
       top: 10,
       child: SizedBox(
         width: itemWidth * 2,

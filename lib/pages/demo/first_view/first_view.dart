@@ -57,70 +57,72 @@ class FirstViewState extends BaseStateOfView<FirstView, FirstViewModel> {
   Widget buildBody(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          ButtonTextWidget(
-              title: 'OPEN DIALOG',
-              onPressed: () {
-                getIt<DialogCommon>().showAlertDialog(context: context, title: "TEST");
-              }),
-          _spacing10(),
-          const DatePickerWidget(),
-          _spacing10(),
-          ButtonTextWidget(
-              title: 'OPEN BROWSER NATIVE CODE',
-              onPressed: () {
-                _methodChannel.invokeMethod('openBrowser');
-              }),
-          _spacing10(),
-          ButtonTextWidget(
-              title: 'EVENT CHANNEL',
-              onPressed: () {
-                callEventChannel();
-              }),
-          _spacing10(),
-          ButtonTextWidget(
-              title: 'SECOND EVENT CHANNEL',
-              onPressed: () {
-                callSecondEventChannel();
-              }),
-          _spacing10(),
-          DropDownWidget(
-            hintText: 'NOTHING',
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            dropDownList: viewModel.dropdownItems,
-            singleController: SingleValueDropDownController(
-                data:
-                const DropDownValueModel(name: 'dropdown1', value: 'dropdown1')),
-          ),
-          PagingWidget(
-            currentPage: 1,
-            numberOfPages: 6,
-            onPageChange: (index) {
-
-            },
-          ),
-          _spacing10(),
-          Obx(() => PopupMenuColumWidget(menuItems: viewModel.menuItems.value,)),
-          _spacing10(),
-          ButtonTextWidget(
-              title: 'syncfusion flutter charts',
-              onPressed: () {
-                Get.toNamed(SyncfusionFlutterChartsView.route);
-              }),
-          ButtonTextWidget(
-              title: 'Change theme',
-              onPressed: () {
-                if (_isBlueTheme) {
-                  Get.changeTheme(redTheme);
-                  _isBlueTheme = false;
-                } else {
-                  Get.changeTheme(blueTheme);
-                  _isBlueTheme = true;
-                }
-              }),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ButtonTextWidget(
+                title: 'OPEN DIALOG',
+                onPressed: () {
+                  getIt<DialogCommon>().showAlertDialog(context: context, title: "TEST");
+                }),
+            _spacing10(),
+            const DatePickerWidget(),
+            _spacing10(),
+            ButtonTextWidget(
+                title: 'OPEN BROWSER NATIVE CODE',
+                onPressed: () {
+                  _methodChannel.invokeMethod('openBrowser');
+                }),
+            _spacing10(),
+            ButtonTextWidget(
+                title: 'EVENT CHANNEL',
+                onPressed: () {
+                  callEventChannel();
+                }),
+            _spacing10(),
+            ButtonTextWidget(
+                title: 'SECOND EVENT CHANNEL',
+                onPressed: () {
+                  callSecondEventChannel();
+                }),
+            _spacing10(),
+            DropDownWidget(
+              hintText: 'NOTHING',
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              dropDownList: viewModel.dropdownItems,
+              singleController: SingleValueDropDownController(
+                  data:
+                  const DropDownValueModel(name: 'dropdown1', value: 'dropdown1')),
+            ),
+            PagingWidget(
+              currentPage: 1,
+              numberOfPages: 20,
+              onPageChange: (index) {
+                print('sssssss==${index}');
+              },
+            ),
+            _spacing10(),
+            Obx(() => PopupMenuColumWidget(menuItems: viewModel.menuItems.value,)),
+            _spacing10(),
+            ButtonTextWidget(
+                title: 'syncfusion flutter charts',
+                onPressed: () {
+                  Get.toNamed(SyncfusionFlutterChartsView.route);
+                }),
+            ButtonTextWidget(
+                title: 'Change theme',
+                onPressed: () {
+                  if (_isBlueTheme) {
+                    Get.changeTheme(redTheme);
+                    _isBlueTheme = false;
+                  } else {
+                    Get.changeTheme(blueTheme);
+                    _isBlueTheme = true;
+                  }
+                }),
+          ],
+        ),
       ),
     );
   }

@@ -48,6 +48,7 @@ class PagingViewState extends State<PagingWidget> {
 
   NumberPaginatorUIConfig _getConfig() {
     return widget.numberPaginatorUIConfig ?? NumberPaginatorUIConfig(
+      isShowIconNextAndPrev: false,
       buttonSelectedForegroundColor: Colors.limeAccent,
       buttonUnselectedForegroundColor: const Color(0xFF3333333),
       buttonUnselectedBackgroundColor: Colors.limeAccent,

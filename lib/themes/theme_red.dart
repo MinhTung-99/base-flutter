@@ -142,9 +142,9 @@ final redTheme = ThemeData(
       backgroundColor: MaterialStateProperty.all<Color>(primaryColor),
       foregroundColor: MaterialStateProperty.resolveWith<Color>( ///Text color
             (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
-            return Colors.white.withOpacity(0.5);
-          }
+          // if (states.contains(MaterialState.disabled)) {
+          //   return Colors.white.withOpacity(0.5);
+          // }
           return Colors.white; // Use the component's default.
         },
       ),

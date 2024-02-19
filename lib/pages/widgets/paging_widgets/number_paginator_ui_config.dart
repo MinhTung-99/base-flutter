@@ -60,8 +60,8 @@ class NumberPaginatorUIConfig {
   /// Foreground => BorderColor
   const NumberPaginatorUIConfig({
     this.height = 48.0,
-    this.heightPage = 36,
-    this.withPage = 36,
+    this.heightPage = 42,
+    this.withPage = 42,
     this.mode = ContentDisplayMode.numbers,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.isShowIconNextAndPrev = true,

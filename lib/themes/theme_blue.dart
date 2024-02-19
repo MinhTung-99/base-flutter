@@ -122,7 +122,7 @@ final blueTheme = ThemeData(
   buttonTheme: const ButtonThemeData(),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      splashFactory: CustomSplashButton.splashFactory,
+      //splashFactory: CustomSplashButton.splashFactory,
       textStyle: MaterialStateProperty.all<TextStyle>(const TextStyle(
         fontFamily: Font.sourceHanSansJP,
         fontWeight: FontWeight.bold,
@@ -142,9 +142,9 @@ final blueTheme = ThemeData(
       backgroundColor: MaterialStateProperty.all<Color>(primaryColor),
       foregroundColor: MaterialStateProperty.resolveWith<Color>( ///Text color
         (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
-            return Colors.white.withOpacity(0.5);
-          }
+          // if (states.contains(MaterialState.disabled)) {
+          //   return Colors.white.withOpacity(0.5);
+          // }
           return Colors.white; // Use the component's default.
         },
       ),

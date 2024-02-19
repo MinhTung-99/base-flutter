@@ -45,16 +45,7 @@ class NumberContent extends StatelessWidget {
                       ? controllerPage.prev
                       : null,
                 )),
-            _buildPageButton(context, 0),
-            if (_frontDotsShouldShow(context, availableSpots))
-              _buildDots(context),
-            if (InheritedNumberPaginator.of(context).numberPages > 1)
-              ..._generateButtonList(context, availableSpots),
-            if (_backDotsShouldShow(context, availableSpots))
-              _buildDots(context),
-            if (InheritedNumberPaginator.of(context).numberPages > 1)
-              _buildPageButton(context,
-                  InheritedNumberPaginator.of(context).numberPages - 1),
+            ..._generateButtonList(context, availableSpots),
             Visibility(
               visible:
                   InheritedNumberPaginator.of(context).config.isShowIconNextAndPrev,
@@ -75,33 +66,56 @@ class NumberContent extends StatelessWidget {
   /// Generates the variable button list which is at the center of the (optional)
   /// dots. The very last and first pages are shown independently of this list.
   List<Widget> _generateButtonList(BuildContext context, int availableSpots) {
-    // if dots shown: available minus (2 for first and last pages + 2 for dots)
-    var shownPages = availableSpots -
-        2 -
-        (_backDotsShouldShow(context, availableSpots) ? 1 : 0) -
-        (_frontDotsShouldShow(context, availableSpots) ? 1 : 0);
-
-    var numberPages = InheritedNumberPaginator.of(context).numberPages;
-
-    int minValue, maxValue;
-    minValue = max(1, currentPage - shownPages ~/ 2);
-    maxValue = min(minValue + shownPages, numberPages - 1);
-    if (maxValue - minValue < shownPages) {
-      minValue = (maxValue - shownPages).clamp(1, numberPages - 1);
+    List<int> pages = [];
+    final totalPage = InheritedNumberPaginator.of(context).numberPages;
+    final myPage = currentPage;
+    if (totalPage <= 7) {
+      pages = List<int>.generate(totalPage, (index) => index + 1);
+    } else if (myPage <= 2) {
+      pages = [1, 2, 3, 4, -1, totalPage - 2, totalPage - 1, totalPage];
+    } else if (myPage <= 4) {
+      pages = [1, -1];
+      pages.addAll(List<int>.generate(5, (index) => index + 3));
+      if (totalPage > 8) {
+        pages.add(-1);
+      }
+      pages.addAll([totalPage]);
+    } else if (myPage < totalPage - 3) {
+      pages = [1, -1];
+      pages.addAll(List<int>.generate(5, (index) => myPage + index - 2));
+      pages.addAll([-1, totalPage]);
+    } else if (myPage < totalPage - 2) {
+      pages = [1, -1];
+      pages.addAll(
+          List<int>.generate(5, (index) => totalPage - index - 2).reversed);
+      pages.addAll([-1, totalPage]);
+    } else {
+      pages = [1, 2, 3, 4, -1];
+      pages.addAll(List<int>.generate(3, (index) => totalPage - 2 + index));
     }
 
-    return List.generate((maxValue - minValue < 0 ? 0 : (maxValue - minValue)),
-        (index) => _buildPageButton(context, minValue + index));
+    // return List.generate((maxValue - minValue < 0 ? 0 : (maxValue - minValue)),
+    //     (index) => _buildPageButton(context, minValue + index));
+
+    return List.generate(
+        pages.length, (index) => _buildPageButton(context, pages[index]));
   }
 
   /// Builds a button for the given index.
-  Widget _buildPageButton(BuildContext context, int index) => PaginatorButton(
-        onPressed: () =>
-            InheritedNumberPaginator.of(context).onPageChange?.call(index),
-        selected: _selected(index),
-        child:
-            AutoSizeText((index + 1).toString(), maxLines: 1, minFontSize: 5),
-      );
+  Widget _buildPageButton(BuildContext context, int index) {
+    if (index == -1) {
+      return _buildDots(context);
+    }
+    return PaginatorButton(
+      onPressed: () =>
+          InheritedNumberPaginator
+              .of(context)
+              .onPageChange
+              ?.call(index),
+      selected: _selected(index),
+      child: AutoSizeText((index).toString(), maxLines: 1, minFontSize: 5),
+    );
+  }
 
   Widget _buildDots(BuildContext context) => Container(
         // padding: const EdgeInsets.all(4.0),
